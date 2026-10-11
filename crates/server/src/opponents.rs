@@ -38,8 +38,7 @@ pub(crate) struct RoomAi {
 
 /// Number of opponents an imported-track room starts with.
 pub(crate) fn owner_ai_count(room: &Room) -> usize {
-    usize::from(room.summary.ai_count)
-        .min(MAX_PLAYERS_PER_ROOM.saturating_sub(room.players.len()))
+    usize::from(room.summary.ai_count).min(MAX_PLAYERS_PER_ROOM.saturating_sub(room.players.len()))
 }
 
 /// The imported car of each of `count` opponents on `track`: the track's cars
@@ -58,7 +57,10 @@ pub(crate) fn owner_ai_roster(
     if ids.is_empty() {
         return Vec::new();
     }
-    let host = ids.iter().position(|id| id.as_str() == host_profile).unwrap_or(0);
+    let host = ids
+        .iter()
+        .position(|id| id.as_str() == host_profile)
+        .unwrap_or(0);
     (0..count)
         .filter_map(|k| {
             let index = (host + 1 + k) % ids.len();

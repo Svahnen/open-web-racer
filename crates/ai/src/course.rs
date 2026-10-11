@@ -65,9 +65,10 @@ pub fn imported_course(rows: &[TrackEdgeRow], spawn: Vec2, heading: f64) -> Opti
         return None;
     }
     let mut frames = road_frames_from_edge_rows(rows, 1.0);
-    if frames.iter().any(|f| {
-        !f.position.iter().all(|v| v.is_finite()) || !(f.left_dist + f.right_dist > 0.5)
-    }) {
+    if frames
+        .iter()
+        .any(|f| !f.position.iter().all(|v| v.is_finite()) || !(f.left_dist + f.right_dist > 0.5))
+    {
         return None;
     }
     let mean_gap = frames
@@ -82,8 +83,8 @@ pub fn imported_course(rows: &[TrackEdgeRow], spawn: Vec2, heading: f64) -> Opti
     {
         return None;
     }
-    let closed = dist(frames[0].position, frames[frames.len() - 1].position)
-        < CLOSE_GAP.max(3.0 * mean_gap);
+    let closed =
+        dist(frames[0].position, frames[frames.len() - 1].position) < CLOSE_GAP.max(3.0 * mean_gap);
 
     // Drive in the direction the player faces at the start.
     let nearest = |frames: &[RoadFrame]| {
@@ -135,7 +136,11 @@ pub fn imported_course(rows: &[TrackEdgeRow], spawn: Vec2, heading: f64) -> Opti
             };
             let step = dist(frames[row].position, frames[next].position);
             if left <= step || next == row {
-                let t = if step > 1e-9 { (left / step).clamp(0.0, 1.0) } else { 0.0 };
+                let t = if step > 1e-9 {
+                    (left / step).clamp(0.0, 1.0)
+                } else {
+                    0.0
+                };
                 let (a, b) = (&frames[row], &frames[next]);
                 let p = Vec2::new(
                     a.position[0] + (b.position[0] - a.position[0]) * t,
@@ -205,7 +210,9 @@ mod tests {
 
     /// A straight road along +X, 4 m per row.
     fn straight(rows: usize) -> Vec<TrackEdgeRow> {
-        (0..rows).map(|i| row(i as f64 * 4.0 - 40.0, 0.0, 1.0, 0.0)).collect()
+        (0..rows)
+            .map(|i| row(i as f64 * 4.0 - 40.0, 0.0, 1.0, 0.0))
+            .collect()
     }
 
     /// A stadium-shaped loop (two straights, two half circles), anticlockwise,
@@ -256,22 +263,43 @@ mod tests {
         let rows = straight(400);
         let course = imported_course(&rows, Vec2::new(0.0, 0.0), 0.0).expect("course");
         assert!(!course.closed);
-        assert_eq!(course.runtime_for_laps(3).laps_to_finish, 1, "p2p ignores laps");
+        assert_eq!(
+            course.runtime_for_laps(3).laps_to_finish,
+            1,
+            "p2p ignores laps"
+        );
         let finish = course.runtime.checkpoints[0];
         assert!(finish.center.x > 1400.0, "finish near the end: {finish:?}");
         // Gates ascend along the road.
-        let xs: Vec<f64> = course.runtime.checkpoints.iter().skip(1).map(|g| g.center.x).collect();
+        let xs: Vec<f64> = course
+            .runtime
+            .checkpoints
+            .iter()
+            .skip(1)
+            .map(|g| g.center.x)
+            .collect();
         assert!(xs.windows(2).all(|w| w[0] < w[1]), "{xs:?}");
         // Driving the gates in order finishes the run.
-        let mut world = racer_sim::RaceWorld::new(racer_sim::SimTiming::default(), course.runtime_for_laps(1));
+        let mut world =
+            racer_sim::RaceWorld::new(racer_sim::SimTiming::default(), course.runtime_for_laps(1));
         world.place_vehicle(Vec2::new(0.0, 0.0), 0.0);
-        for g in course.runtime.checkpoints.iter().skip(1).chain(std::iter::once(&finish)) {
+        for g in course
+            .runtime
+            .checkpoints
+            .iter()
+            .skip(1)
+            .chain(std::iter::once(&finish))
+        {
             // Teleport-free pass: drive the vehicle across the gate in one step.
             world.vehicle.position = Vec2::new(g.center.x - 1.0, g.center.y);
             world.vehicle.velocity = Vec2::new(40.0, 0.0);
             world.step(racer_sim::DriverInput::default());
         }
-        assert!(world.vehicle.finished, "cp {} laps {}", world.vehicle.checkpoint, world.vehicle.completed_laps);
+        assert!(
+            world.vehicle.finished,
+            "cp {} laps {}",
+            world.vehicle.checkpoint, world.vehicle.completed_laps
+        );
     }
 
     #[test]
@@ -281,7 +309,10 @@ mod tests {
         let spawn = Vec2::new(1400.0, 0.0);
         let course = imported_course(&rows, spawn, std::f64::consts::PI).expect("course");
         let finish = course.runtime.checkpoints[0];
-        assert!(finish.center.x < 0.0, "finish is at the low-x end: {finish:?}");
+        assert!(
+            finish.center.x < 0.0,
+            "finish is at the low-x end: {finish:?}"
+        );
         assert!(course.ai_track.rows[0].forward[0] < 0.0);
     }
 
@@ -291,9 +322,16 @@ mod tests {
         let course = imported_course(&rows, Vec2::new(0.0, -60.0), 0.0).expect("course");
         assert!(course.closed);
         assert_eq!(course.runtime_for_laps(3).laps_to_finish, 3);
-        assert!(course.length > 900.0 && course.length < 1050.0, "{}", course.length);
+        assert!(
+            course.length > 900.0 && course.length < 1050.0,
+            "{}",
+            course.length
+        );
         let line = course.runtime.checkpoints[0];
-        assert!((line.center.x - 80.0).abs() < 2.0 && (line.center.y + 60.0).abs() < 2.0, "{line:?}");
+        assert!(
+            (line.center.x - 80.0).abs() < 2.0 && (line.center.y + 60.0).abs() < 2.0,
+            "{line:?}"
+        );
         // The grid's rearmost slot is at the start; the front slots are short of the line.
         let (p0, _) = course.ai_track.grid_slot(0, 8, 1);
         let (p7, _) = course.ai_track.grid_slot(7, 8, 1);
@@ -336,7 +374,11 @@ mod tests {
                 course.closed,
                 opp.cars
                     .iter()
-                    .map(|c| (c.world.vehicle.completed_laps, c.world.vehicle.checkpoint, c.world.vehicle.position))
+                    .map(|c| (
+                        c.world.vehicle.completed_laps,
+                        c.world.vehicle.checkpoint,
+                        c.world.vehicle.position
+                    ))
                     .collect::<Vec<_>>()
             );
         }

@@ -2082,13 +2082,12 @@ fn client_has_current_roster_templates(
             let (host, paint) = room
                 .players
                 .get(&room.owner_player_id)
-                .map_or(("", ""), |p| (p.vehicle_profile_id.as_str(), p.paint_id.as_str()));
-            for (profile_id, fingerprint, _) in opponents::owner_ai_roster(
-                track,
-                host,
-                paint,
-                opponents::owner_ai_count(room),
-            ) {
+                .map_or(("", ""), |p| {
+                    (p.vehicle_profile_id.as_str(), p.paint_id.as_str())
+                });
+            for (profile_id, fingerprint, _) in
+                opponents::owner_ai_roster(track, host, paint, opponents::owner_ai_count(room))
+            {
                 expected.insert(profile_id, fingerprint);
             }
         }
@@ -4696,18 +4695,28 @@ mod tests {
             assert!(course.closed);
         }
         // Ready needs the car models of the computer drivers too.
-        let track = state.2.as_ref().unwrap().track("track-profile-0001").unwrap().clone();
+        let track = state
+            .2
+            .as_ref()
+            .unwrap()
+            .track("track-profile-0001")
+            .unwrap()
+            .clone();
         let template = |id: &str| protocol::AvailableCarProfile {
             profile_id: id.into(),
             source_fingerprint: track.cars.get(id).unwrap().source_fingerprint.clone(),
         };
-        let both = vec![template("vehicle-profile-0001"), template("vehicle-profile-0002")];
-        let ready = |templates: Vec<protocol::AvailableCarProfile>, revision| ClientMessage::ReadyState {
-            ready: true,
-            selection_revision: revision,
-            track_fingerprint: track.source_fingerprint.clone(),
-            vehicle_templates: templates,
-        };
+        let both = vec![
+            template("vehicle-profile-0001"),
+            template("vehicle-profile-0002"),
+        ];
+        let ready =
+            |templates: Vec<protocol::AvailableCarProfile>, revision| ClientMessage::ReadyState {
+                ready: true,
+                selection_revision: revision,
+                track_fingerprint: track.source_fingerprint.clone(),
+                vehicle_templates: templates,
+            };
         let revision = state.0.lock().await.rooms[&1].summary.selection_revision;
         // Both cars of the track are used by the humans, so the roster is exact with both.
         process_message(&state, 1, ready(both.clone(), revision)).await;
@@ -4727,14 +4736,25 @@ mod tests {
             let room = hub.rooms.get(&1).unwrap();
             let ai = room.ai.as_ref().expect("opponents were created");
             assert_eq!(ai.opponents.cars.len(), 3);
-            let human_x: Vec<f64> = room.players.values().map(|p| p.world.vehicle.position.x).collect();
-            assert!(ai
-                .opponents
-                .cars
-                .iter()
-                .all(|c| human_x.iter().all(|x| c.world.vehicle.position.x > *x)));
-            assert!(room.players.values().all(|p| p.world.track.laps_to_finish == 1
-                && p.world.track.checkpoints.len() >= 3));
+            let human_x: Vec<f64> = room
+                .players
+                .values()
+                .map(|p| p.world.vehicle.position.x)
+                .collect();
+            assert!(
+                ai.opponents.cars.iter().all(|c| human_x.iter().all(|x| c
+                    .world
+                    .vehicle
+                    .position
+                    .x
+                    > *x))
+            );
+            assert!(
+                room.players
+                    .values()
+                    .all(|p| p.world.track.laps_to_finish == 1
+                        && p.world.track.checkpoints.len() >= 3)
+            );
             for _ in 0..(COUNTDOWN_TICKS + 1) {
                 advance_authoritative_tick(&mut hub);
             }
@@ -4743,9 +4763,11 @@ mod tests {
             for _ in 0..(60 * 120) {
                 advance_authoritative_tick(&mut hub);
                 let room = &hub.rooms[&1];
-                if room.ai.as_ref().is_some_and(|ai| {
-                    ai.opponents.cars.iter().all(|c| c.world.vehicle.finished)
-                }) {
+                if room
+                    .ai
+                    .as_ref()
+                    .is_some_and(|ai| ai.opponents.cars.iter().all(|c| c.world.vehicle.finished))
+                {
                     break;
                 }
             }
@@ -4762,10 +4784,20 @@ mod tests {
         let profiles: Vec<&str> = ai.iter().map(|v| v.vehicle_profile_id.as_str()).collect();
         assert_eq!(
             profiles,
-            ["vehicle-profile-0002", "vehicle-profile-0001", "vehicle-profile-0002"]
+            [
+                "vehicle-profile-0002",
+                "vehicle-profile-0001",
+                "vehicle-profile-0002"
+            ]
         );
-        assert!(ai.iter().all(|v| v.paint_id == "paint-colour-1"), "opponents wear the host's paint");
-        assert!(ai.iter().all(|v| v.finished && v.completed_laps == 1 && v.race_position >= 1));
+        assert!(
+            ai.iter().all(|v| v.paint_id == "paint-colour-1"),
+            "opponents wear the host's paint"
+        );
+        assert!(
+            ai.iter()
+                .all(|v| v.finished && v.completed_laps == 1 && v.race_position >= 1)
+        );
         // Positions are distinct over everybody in the room.
         let mut positions: Vec<u8> = vehicles.iter().map(|v| v.race_position).collect();
         positions.sort_unstable();
@@ -4799,13 +4831,22 @@ mod tests {
     async fn owner_laps_are_bounded_and_free_drive_clears_opponents() {
         let (state, _) = racing_catalog_state();
         create_owner_room(&state, 9, 2).await;
-        assert!(state.0.lock().await.rooms.is_empty(), "more than five laps is invalid");
+        assert!(
+            state.0.lock().await.rooms.is_empty(),
+            "more than five laps is invalid"
+        );
         create_owner_room(&state, 5, 2).await;
         {
             let hub = state.0.lock().await;
             assert_eq!(hub.rooms[&1].summary.laps, 5);
         }
-        let track = state.2.as_ref().unwrap().track("track-profile-0001").unwrap().clone();
+        let track = state
+            .2
+            .as_ref()
+            .unwrap()
+            .track("track-profile-0001")
+            .unwrap()
+            .clone();
         process_message(
             &state,
             1,

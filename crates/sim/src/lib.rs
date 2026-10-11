@@ -3113,9 +3113,19 @@ mod tests {
         world.vehicle.checkpoint = 3 % count;
         world.vehicle.position = world.track.checkpoints[3 % count].center;
         let ahead = world.rank_entry(1);
-        let rival = RankEntry { id: 2, checkpoint: 2, completed_laps: 0, finished: false, finish_ticks: None, distance_to_next: 1.0 };
+        let rival = RankEntry {
+            id: 2,
+            checkpoint: 2,
+            completed_laps: 0,
+            finished: false,
+            finish_ticks: None,
+            distance_to_next: 1.0,
+        };
         assert_eq!(rank_race(count, &[ahead, rival]), vec![1, 2]);
-        world.step(DriverInput { reset_request: true, ..DriverInput::default() });
+        world.step(DriverInput {
+            reset_request: true,
+            ..DriverInput::default()
+        });
         assert_eq!(rank_race(count, &[world.rank_entry(1), rival]), vec![2, 1]);
     }
 

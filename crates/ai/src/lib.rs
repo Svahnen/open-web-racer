@@ -15,8 +15,8 @@ pub mod rules;
 pub mod track;
 pub mod vehicle;
 
-pub use course::{ImportedCourse, imported_course};
 pub use config::{AiConfig, Skill, default_ai_set, default_vehicle_ai};
+pub use course::{ImportedCourse, imported_course};
 pub use field::{AiField, CarObs, Settings};
 pub use race::{DEFAULT_OPPONENTS, MAX_OPPONENTS, Opponents, circuit_ai_track};
 pub use racer_pack_schema::ai::VehicleAi;

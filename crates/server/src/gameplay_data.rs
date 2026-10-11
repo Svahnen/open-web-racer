@@ -107,10 +107,18 @@ impl GameplayDataStore {
         let collision = PreviewCollisionWorld {
             ground: vec![
                 racer_sim::PreviewGroundTriangle {
-                    vertices: [[-reach, -reach, 0.0], [reach, -reach, 0.0], [reach, reach, 0.0]],
+                    vertices: [
+                        [-reach, -reach, 0.0],
+                        [reach, -reach, 0.0],
+                        [reach, reach, 0.0],
+                    ],
                 },
                 racer_sim::PreviewGroundTriangle {
-                    vertices: [[-reach, -reach, 0.0], [reach, reach, 0.0], [-reach, reach, 0.0]],
+                    vertices: [
+                        [-reach, -reach, 0.0],
+                        [reach, reach, 0.0],
+                        [-reach, reach, 0.0],
+                    ],
                 },
             ],
             walls: Vec::new(),

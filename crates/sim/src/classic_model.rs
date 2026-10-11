@@ -39,9 +39,9 @@
 use std::f64::consts::TAU;
 
 use crate::drivetrain::{
-    apply_auto_reverse, update_selector, DriveState, DriveTelemetry, COMMAND_FULL, GEAR_CODE_NEUTRAL,
-    GEAR_CODE_REVERSE, SELECTOR_DRIVE, SELECTOR_NEUTRAL, SELECTOR_REVERSE, SLIDE_OFFSET_MAX,
-    STEER_FULL,
+    apply_auto_reverse, update_selector, DriveState, DriveTelemetry, COMMAND_FULL,
+    GEAR_CODE_NEUTRAL, GEAR_CODE_REVERSE, SELECTOR_DRIVE, SELECTOR_NEUTRAL, SELECTOR_REVERSE,
+    SLIDE_OFFSET_MAX, STEER_FULL,
 };
 use crate::provisional_model::KinematicUpdate;
 use crate::{DriverInput, Vec2, Vehicle};

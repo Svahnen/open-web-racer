@@ -78,7 +78,10 @@ fn throttle_in_r_brakes_then_selects_first_and_drives_forward() {
             w.step(pedals(1.0, 0.0));
             if forward(&w) < -0.6 {
                 assert_eq!(gear(&w), GEAR_CODE_REVERSE, "still R while rolling back");
-                assert!(forward(&w) >= last - 1e-9, "throttle brakes, not accelerates");
+                assert!(
+                    forward(&w) >= last - 1e-9,
+                    "throttle brakes, not accelerates"
+                );
                 saw_r_while_braking = true;
             }
             last = forward(&w);

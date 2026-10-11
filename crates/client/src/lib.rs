@@ -338,7 +338,11 @@ impl LocalRaceClient {
                 [self.world.vehicle.position.x, self.world.vehicle.position.y],
                 None,
             )];
-            if row.forward[0] * h.cos() + row.forward[1] * h.sin() < 0.0 { -1 } else { 1 }
+            if row.forward[0] * h.cos() + row.forward[1] * h.sin() < 0.0 {
+                -1
+            } else {
+                1
+            }
         } else {
             1
         };
@@ -701,7 +705,11 @@ impl LocalRaceClient {
 
     /// Laps of the race on the imported track (0 when free driving).
     pub fn imported_laps(&self) -> u32 {
-        if self.imported_preview { self.world.track.laps_to_finish } else { 0 }
+        if self.imported_preview {
+            self.world.track.laps_to_finish
+        } else {
+            0
+        }
     }
 
     pub fn use_open_preview(&mut self) {
@@ -940,19 +948,20 @@ fn imported_road_ai(
     let first = frames.first()?.position;
     let last = frames.last()?.position;
     let gap = (first[0] - last[0]).hypot(first[1] - last[1]);
-    let mut road = racer_ai::AiTrack::from_frames(
-        &frames,
-        gap < 30.0,
-        &racer_ai::DeriveParams::default(),
-    )
-    .ok()?;
+    let mut road =
+        racer_ai::AiTrack::from_frames(&frames, gap < 30.0, &racer_ai::DeriveParams::default())
+            .ok()?;
     let spawn = world.vehicle.position;
     let near = road.locate([spawn.x, spawn.y], None);
     let heading = world.vehicle.heading;
     let forward = road.rows[near].forward;
     road.grid_spacing = (8.0 / road.row_length).round().max(1.0) as usize;
     // Grid slot 0 sits one row past `grid_start` in the driving direction.
-    let dir = if forward[0] * heading.cos() + forward[1] * heading.sin() < 0.0 { 1 } else { -1 };
+    let dir = if forward[0] * heading.cos() + forward[1] * heading.sin() < 0.0 {
+        1
+    } else {
+        -1
+    };
     road.grid_start = road.step(near, dir, 1);
     Some((std::sync::Arc::new(road), collision))
 }
@@ -1356,10 +1365,18 @@ mod preview_collision_tests {
         let collision = PreviewCollisionWorld {
             ground: vec![
                 racer_sim::PreviewGroundTriangle {
-                    vertices: [[-100.0, -50.0, 0.0], [2000.0, -50.0, 0.0], [2000.0, 50.0, 0.0]],
+                    vertices: [
+                        [-100.0, -50.0, 0.0],
+                        [2000.0, -50.0, 0.0],
+                        [2000.0, 50.0, 0.0],
+                    ],
                 },
                 racer_sim::PreviewGroundTriangle {
-                    vertices: [[-100.0, -50.0, 0.0], [2000.0, 50.0, 0.0], [-100.0, 50.0, 0.0]],
+                    vertices: [
+                        [-100.0, -50.0, 0.0],
+                        [2000.0, 50.0, 0.0],
+                        [-100.0, 50.0, 0.0],
+                    ],
                 },
             ],
             walls: Vec::new(),
@@ -1374,16 +1391,25 @@ mod preview_collision_tests {
         client.use_open_preview_with_collision(collision).unwrap();
         client.configure_opponents(3, 1, true);
         let start = client.opponent_snapshots();
-        assert_eq!(start.len(), 3, "road rows must give the open preview opponents");
+        assert_eq!(
+            start.len(),
+            3,
+            "road rows must give the open preview opponents"
+        );
         // The human keeps the rearmost slot; the opponents are ahead of the player, facing along the road.
         let human_x = client.snapshot().x;
-        assert!(start.iter().all(|o| o.x > human_x), "{start:?} vs {human_x}");
+        assert!(
+            start.iter().all(|o| o.x > human_x),
+            "{start:?} vs {human_x}"
+        );
         for _ in 0..600 {
             client.tick();
         }
         let end = client.opponent_snapshots();
         assert!(
-            end.iter().zip(&start).all(|(e, s)| e.x - s.x > 50.0 && e.y.abs() < 8.0),
+            end.iter()
+                .zip(&start)
+                .all(|(e, s)| e.x - s.x > 50.0 && e.y.abs() < 8.0),
             "opponents did not drive down the road: {start:?} -> {end:?}"
         );
     }
@@ -1411,10 +1437,18 @@ mod preview_collision_tests {
         PreviewCollisionWorld {
             ground: vec![
                 racer_sim::PreviewGroundTriangle {
-                    vertices: [[-reach, -reach, 0.0], [reach, -reach, 0.0], [reach, reach, 0.0]],
+                    vertices: [
+                        [-reach, -reach, 0.0],
+                        [reach, -reach, 0.0],
+                        [reach, reach, 0.0],
+                    ],
                 },
                 racer_sim::PreviewGroundTriangle {
-                    vertices: [[-reach, -reach, 0.0], [reach, reach, 0.0], [-reach, reach, 0.0]],
+                    vertices: [
+                        [-reach, -reach, 0.0],
+                        [reach, reach, 0.0],
+                        [-reach, reach, 0.0],
+                    ],
                 },
             ],
             walls: Vec::new(),
