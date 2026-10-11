@@ -1,0 +1,23 @@
+# Build output
+/target/
+/node_modules/
+/web/pkg/
+/web/dist/
+/playwright-report/
+/test-results/
+/coverage/
+
+# Local configuration
+.env
+.env.*
+!.env.example
+*.local.toml
+*.local.json
+
+# Editors and OS
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+Desktop.ini

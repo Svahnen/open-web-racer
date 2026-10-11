@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1118" />
+    <title>Open Web Racer</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand"><span class="mark" aria-hidden="true">OWR</span><div><h1>Open Web Racer</h1><small id="mode-label">Lobby · Test Circuit</small></div></div>
+        <div class="status"><span class="live-dot"></span><span id="engine-status">Starting simulation…</span></div>
+      </header>
+      <section class="game" id="game" aria-label="Racing game">
+        <canvas id="race-canvas" class="render-surface" tabindex="0" aria-label="Racing view. Use arrow keys or W and S to drive, A and Z to shift."></canvas>
+        <canvas id="webgl-canvas" class="render-surface" tabindex="0" aria-label="Racing view. Use arrow keys or W and S to drive, A and Z to shift." hidden></canvas>
+        <canvas id="fallback-canvas" class="render-surface" hidden aria-hidden="true"></canvas>
+        <canvas id="hud-canvas" class="hud-canvas" width="640" height="480" role="img" aria-label="Race HUD: gear, tachometer, speed, lap time, position, lap and route map"></canvas>
+        <div class="hud" id="game-hud" role="group" aria-label="Driving information">
+          <div class="hud-card speed-card"><span class="eyebrow">SPEED</span><div><strong id="speed">0.0</strong><span id="speed-unit">km/h</span> <span id="gear-slot" class="gear-slot" hidden>gear <strong id="gear">-</strong></span></div></div>
+          <div class="hud-card time-card"><span class="eyebrow" id="hud-time-label">SESSION</span><strong id="hud-time">—</strong></div>
+          <div class="hud-card state-card"><span class="eyebrow">STATE</span><strong id="hud-state">LOADING</strong></div>
+          <div class="hud-card lap-card" id="hud-lap-card" hidden><span class="eyebrow">LAP</span><div><strong id="lap">1</strong><span id="lap-target"> / 2</span></div></div>
+        </div>
+        <div class="hud-race" id="hud-race" role="group" aria-label="Race position and lap times" hidden>
+          <div class="hud-card"><span class="eyebrow">POS</span><strong id="hud-position">—</strong></div>
+          <div class="hud-card"><span class="eyebrow" id="hud-lap-time-label">LAP TIME</span><strong id="hud-lap-time">—</strong></div>
+          <div class="hud-card"><span class="eyebrow">LAST</span><strong id="hud-last-lap">—</strong></div>
+          <div class="hud-card"><span class="eyebrow">BEST</span><strong id="hud-best-lap">—</strong></div>
+        </div>
+        <div class="route-map-panel" id="route-map-panel" role="img" aria-label="Imported route preview map" hidden>
+          <span class="eyebrow">ROUTE · PREVIEW</span>
+          <canvas id="route-map" aria-hidden="true"></canvas>
+        </div>
+        <span id="tick" class="visually-hidden" aria-hidden="true">0</span>
+        <p class="controls-hint" id="controls-hint" data-controls-hint aria-label="Driving controls"></p>
+        <div class="gear-hint" id="gear-hint" role="status" aria-live="polite" hidden></div>
+        <div class="toast" id="toast" role="status">Click the track, then drive</div>
+        <button id="fullscreen-exit" class="fullscreen-exit" type="button" hidden>Exit fullscreen</button>
+      </section>
+      <section class="project-car-setup" id="project-car-setup" aria-label="Demo car" hidden>
+        <div class="ai-setup" role="group" aria-label="Demo car"><label>Demo car <select id="project-car-choice" aria-label="Demo car model"></select></label><label>Paint <select id="project-paint-choice" aria-label="Demo car paint"></select></label><span id="project-car-swatch" class="car-swatch" aria-hidden="true"></span></div>
+      </section>
+      <section class="practice-entry" id="practice-entry" aria-label="Solo practice">
+        <div class="practice-copy"><span class="eyebrow">PLAY NOW · SOLO</span><strong id="solo-entry-title">Practice on the Test Circuit</strong><p id="solo-entry-blurb">Drive the project course with a local simulation. No server or game data needed.</p><p class="controls-line" data-controls-hint></p></div>
+        <label class="field-choice" id="solo-track-choice-wrap" hidden>Track <select id="solo-track-choice" aria-label="Solo track"><option value="">Test Circuit · project content</option></select></label>
+        <div class="ai-setup" id="solo-ai-setup" role="group" aria-label="Computer opponents"><label>Computer opponents <select id="solo-ai-count" aria-label="Computer opponents"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7" selected>7</option></select></label><label>Difficulty <select id="solo-ai-skill" aria-label="Opponent difficulty"><option value="0">Beginner</option><option value="1" selected>Advanced</option></select></label><label class="check"><input id="solo-ai-catchup" type="checkbox" checked /> Catch-up</label><label>Laps on installed tracks <select id="solo-laps" aria-label="Laps on installed tracks"><option value="0">Free drive</option><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option><option value="5">5</option></select></label><label>Gearbox <select id="solo-transmission" aria-label="Solo gearbox"><option value="automatic" selected>Automatic</option><option value="manual">Manual</option></select></label></div>
+        <a class="action-link" id="solo-drive-link" href="?practice=local&amp;ai=7&amp;skill=1&amp;catchup=1">Drive solo</a>
+      </section>
+      <section class="practice-session" id="practice-session" aria-label="Solo practice session" hidden>
+        <div><span class="eyebrow">OFFLINE DRIVE</span><h2>Solo Practice</h2><p>You're driving the project Test Circuit. Your browser runs the simulation locally.</p></div>
+        <label class="field-choice" id="solo-track-switch-wrap" hidden>Track <select id="solo-track-switch" aria-label="Switch solo track"><option value="">Test Circuit · project content</option></select></label>
+        <div class="ai-setup" id="practice-ai-setup" role="group" aria-label="Computer opponents"><label>Computer opponents <select id="practice-ai-count" aria-label="Computer opponents"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7" selected>7</option></select></label><label>Difficulty <select id="practice-ai-skill" aria-label="Opponent difficulty"><option value="0">Beginner</option><option value="1" selected>Advanced</option></select></label><label class="check"><input id="practice-ai-catchup" type="checkbox" checked /> Catch-up</label><label id="practice-laps-wrap" hidden>Laps on installed tracks <select id="practice-laps" aria-label="Laps on installed tracks"><option value="0">Free drive</option><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option><option value="5">5</option></select></label><label>Gearbox <select id="practice-transmission" aria-label="Practice gearbox"><option value="automatic" selected>Automatic</option><option value="manual">Manual</option></select></label><span id="practice-ai-note" class="ai-note"></span></div>
+        <div id="scene-source-practice" class="scene-source-slot"></div>
+        <a class="action-link secondary" href="./">Return to race lobby</a>
+      </section>
+      <section class="network-panel" aria-label="Multiplayer lobby">
+        <div class="network-heading"><div><h2>Race lobby</h2><p id="network-status" role="status">Connecting to this server…</p><p class="controls-line" data-controls-hint></p></div><span id="player-id" class="player-id">Offline</span></div>
+        <div id="scene-source-lobby" class="scene-source-slot"></div>
+        <form id="create-race-form" class="create-race">
+          <label>Race name <input id="race-name" maxlength="48" value="Open circuit" required /></label>
+          <label>Track <select id="network-track-choice" aria-label="Race track"><option value="track-profile-project-circuit">Test Circuit · project content</option></select></label>
+          <label>Laps <select id="race-laps"><option value="0" hidden disabled>Free drive</option><option>1</option><option selected>2</option><option>3</option><option>5</option></select></label>
+          <label>Driver name <input id="network-driver-name" maxlength="24" value="Driver" required /></label>
+          <label>Car colour <select id="network-paint-choice" aria-label="Car colour"><option value="paint-colour-0">Silver</option><option value="paint-colour-1">Graphite</option><option value="paint-colour-2">Red</option><option value="paint-colour-3">Orange</option><option value="paint-colour-4">Yellow</option><option value="paint-colour-5">Green</option><option value="paint-colour-6">Blue</option><option value="paint-colour-7">White</option></select></label>
+          <label>Gearbox <select id="race-transmission" aria-label="Your gearbox"><option value="automatic" selected>Automatic</option><option value="manual">Manual</option></select></label>
+          <label>Computer opponents <select id="race-ai-count" aria-label="Computer opponents"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7" selected>7</option></select></label><label>Difficulty <select id="race-ai-skill" aria-label="Opponent difficulty"><option value="0">Beginner</option><option value="1" selected>Advanced</option></select></label><label class="check"><input id="race-ai-catchup" type="checkbox" checked /> Catch-up</label>
+          <button type="submit">Create race</button>
+        </form>
+        <div id="race-list" class="race-list" aria-live="polite"><p class="empty-races">Waiting for lobby…</p></div>
+        <div id="room-controls" class="room-controls" hidden>
+          <div class="room-summary"><strong id="room-title">Race</strong><span id="room-state">Lobby</span><p id="room-guidance" class="room-guidance">Waiting for drivers. Invite someone, then ready up to start.</p></div>
+          <label id="room-track-choice-wrap" hidden>Host track<select id="room-track-choice" aria-label="Room track"></select></label>
+          <label id="room-vehicle-choice-wrap" hidden>Your car<select id="room-vehicle-choice" aria-label="Your room car"></select></label>
+          <label id="room-transmission-wrap" hidden>Your gearbox<select id="room-transmission" aria-label="Your room gearbox"><option value="automatic" selected>Automatic</option><option value="manual">Manual</option></select></label>
+          <label id="room-paint-choice-wrap" hidden>Your car colour<select id="room-paint-choice" aria-label="Your car colour"><option value="paint-colour-0">Silver</option><option value="paint-colour-1">Graphite</option><option value="paint-colour-2">Red</option><option value="paint-colour-3">Orange</option><option value="paint-colour-4">Yellow</option><option value="paint-colour-5">Green</option><option value="paint-colour-6">Blue</option><option value="paint-colour-7">White</option></select></label>
+          <label id="room-laps-wrap" hidden>Laps<select id="room-laps" aria-label="Room laps"><option value="0">Free drive</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="5">5</option></select></label>
+          <div id="room-ai-wrap" class="room-ai" hidden><label>Computer opponents <select id="room-ai-count" aria-label="Computer opponents"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7" selected>7</option></select></label><label>Difficulty <select id="room-ai-skill" aria-label="Opponent difficulty"><option value="0">Beginner</option><option value="1" selected>Advanced</option></select></label><label class="check"><input id="room-ai-catchup" type="checkbox" checked /> Catch-up</label></div>
+          <button id="ready" type="button">Ready</button><button id="leave-race" type="button">Leave race</button>
+        </div>
+      </section>
+      <div id="scene-source-panel" class="scene-source-slot"></div>
+      <div id="frame-recovery-slot" class="scene-source-slot"></div>
+      <footer class="controls">
+        <div class="keys"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd><span>drive (W/S also work)</span><kbd>Z</kbd><kbd>A</kbd><span>shift down/up</span><kbd>Z</kbd><kbd>Z</kbd><span>at standstill: reverse</span><kbd>A</kbd><kbd>A</kbd><span>back to forward</span><kbd>Space</kbd><span>handbrake</span><kbd>R</kbd><span>reset</span></div>
+        <div class="preview-camera-control"><label><input id="auto-reverse" type="checkbox" /> Auto reverse: no shifting needed</label><span>Off by default. On: hold Down at a standstill to reverse (R), hold Up to brake and drive forward again; works with either gearbox.</span></div>
+        <div class="preview-camera-control"><label for="preview-camera-mode">View</label><select id="preview-camera-mode" aria-label="Camera view"><option value="chase">Elevated chase</option><option value="wide">Distant chase</option><option value="close">Close chase</option><option value="road">Low road</option></select><span>C cycles · hold B looks back</span></div>
+        <div class="preview-camera-control speed-unit-control"><label for="speed-display-unit">Speed display</label><select id="speed-display-unit" aria-label="Speed display units"><option value="kmh">km/h · project default</option><option value="mph">mph</option><option value="raw">raw sim units</option></select><span>Display convention only; the reference speed scale is unknown (km/h factor is a provisional placeholder).</span></div>
+        <div class="preview-camera-control sound-control"><label for="sound-volume">Sound</label><input id="sound-volume" type="range" min="0" max="1" step="0.05" value="0.7" aria-label="Sound volume" /><label><input id="sound-muted" type="checkbox" /> Mute</label><span>Synthesized placeholder engine sound.</span></div>
+        <div class="preview-camera-control hud-diagnostics-control"><label><input id="hud-diagnostics" type="checkbox" /> Diagnostic HUD cards</label><span>Shows the card overlay (session time, state, lap times) instead of hiding it behind the race HUD.</span></div>
+        <button id="reset" type="button">Reset car</button>
+        <div class="fullscreen-control"><button id="fullscreen-toggle" type="button" aria-pressed="false" aria-label="Enter fullscreen game view">Enter fullscreen</button><span id="fullscreen-status" role="status" aria-live="polite" hidden></span></div>
+      </footer>
+    </main>
+    <script type="module" src="./fullscreen.js"></script>
+    <script type="module" src="./bootstrap.js"></script>
+  </body>
+</html>

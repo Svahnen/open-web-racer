@@ -1,0 +1,69 @@
+:root { color-scheme: dark; font: 15px/1.4 Inter, ui-sans-serif, system-ui, sans-serif; background: #0b1118; color: #eaf0f5; }
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 24px; background: radial-gradient(ellipse at 50% -25%, #1f3443 0, #0b1118 65%); }
+.shell { width: min(1120px, 100%); min-width: 0; }
+.topbar, .brand, .status, .controls, .keys { display: flex; align-items: center; }
+.topbar { justify-content: space-between; gap: 16px; margin-bottom: 14px; min-width: 0; }
+.brand { gap: 12px; }.brand h1, .brand small { display: block; }.brand h1 { margin: 0; font-size: 16px; letter-spacing: .01em; }.brand small { margin-top: 2px; color: #8ea2b2; font-size: 12px; }
+.mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: #d3f36b; color: #17220c; font-size: 13px; font-weight: 900; }
+.status { gap: 8px; min-width: 0; color: #9cafbd; font-size: 12px; }.status #engine-status { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }.live-dot { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: #d3f36b; box-shadow: 0 0 10px #d3f36b88; }
+.game { position: relative; overflow: hidden; border: 1px solid #263641; border-radius: 16px; background: #101b1d; box-shadow: 0 26px 80px #0008; }
+/* Fullscreen owns only the game viewport; lobby, forms, and page controls stay outside. */
+.game:fullscreen { width: 100vw; height: 100vh; height: 100dvh; border: 0; border-radius: 0; box-shadow: none; background: #101b1d; }
+.game:fullscreen canvas.render-surface { width: 100%; height: 100%; min-height: 0; }
+.fullscreen-exit { display: none; }
+.game:fullscreen .fullscreen-exit { position: absolute; top: calc(env(safe-area-inset-top, 0px) + 86px); left: calc(env(safe-area-inset-left, 0px) + 16px); z-index: 5; display: inline-flex; }
+.game:fullscreen .hud { top: 16px; }
+.game:fullscreen .hud-card { padding-top: 4px; padding-bottom: 4px; }
+.fullscreen-control { display: flex; flex: 0 1 auto; align-items: center; gap: 8px; min-width: 0; }
+#fullscreen-status { max-width: 260px; color: #f0bd88; font-size: 11px; }
+canvas.render-surface { display: block; width: 100%; height: min(66vh, 620px); min-height: 360px; outline: none; touch-action: none; }
+.game canvas[hidden] { display: none; }
+canvas:focus-visible { box-shadow: inset 0 0 0 2px #d3f36b; }
+.hud { position: absolute; inset: 16px 16px auto; display: grid; grid-template-columns: 1.12fr 1fr 1fr; overflow: hidden; border: 1px solid #9aabb321; border-radius: 8px; background: #0b1118e8; box-shadow: 0 8px 24px #0005; pointer-events: none; }.hud.has-lap { grid-template-columns: 1.1fr 1fr 1fr .8fr; }
+.hud-card { min-width: 0; padding: 9px 13px; border: 0; border-right: 1px solid #9aabb326; background: transparent; }.hud-card:last-child { border-right: 0; }.eyebrow { display: block; color: #91a2ae; font-size: 9px; font-weight: 800; letter-spacing: .14em; }.hud-card strong { font-size: 20px; font-variant-numeric: tabular-nums; white-space: nowrap; }.hud-card div span { color: #91a2ae; font-size: 11px; }.speed-card strong { color: #d3f36b; font-size: 25px; }.time-card strong { font-size: 18px; }.state-card strong { display: block; margin-top: 1px; color: #d3f36b; font-size: 12px; letter-spacing: .035em; }.lap-card strong { font-size: 19px; }.lap-card div span { font-size: 12px; }.visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+.route-map-panel { position: absolute; right: 16px; bottom: 16px; z-index: 2; width: 168px; padding: 7px; border: 1px solid #9aabb34d; border-radius: 8px; background: #0b1118db; box-shadow: 0 8px 24px #0005; pointer-events: none; }.route-map-panel .eyebrow { margin: 0 2px 4px; font-size: 8px; }.route-map-panel[hidden] { display: none; }#route-map { display: block; width: 100%; height: 96px; }
+.toast { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); padding: 8px 12px; border-radius: 999px; background: #0b1118bf; color: #c9d5dc; font-size: 12px; pointer-events: none; transition: opacity .3s; }.toast.hidden { opacity: 0; }
+.network-panel { margin-top: 18px; padding: 18px; border: 1px solid #263641; border-radius: 14px; background: #101a22; }
+.scene-source-slot { display: contents; }
+.scene-status { margin: 10px 2px 0; color: #cbd6dc; font-size: 12px; }
+.field-choice { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; color: #cbd6dc; font-size: 12px; font-weight: 700; }
+.field-choice select { min-width: 150px; max-width: 100%; padding: 8px 28px 8px 10px; border: 1px solid #43535c; border-radius: 8px; background: #101920; color: #eaf0f5; font: inherit; }
+.practice-entry, .practice-session { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 16px; margin-top: 16px; padding: 16px 18px; border: 1px solid #506239; border-radius: 14px; background: linear-gradient(105deg, #1b2b24, #151f20 65%, #17242b); }
+.practice-copy { display: grid; gap: 3px; }.practice-copy strong { font-size: 15px; }.practice-copy p, .practice-session p { margin: 0; color: #9cafbd; font-size: 12px; }.practice-session h2 { margin: 3px 0; font-size: 17px; }
+.practice-session > div:first-child { flex: 1 1 250px; min-width: 0; }.preview-camera-control { display: flex; flex: 1 1 230px; flex-wrap: wrap; align-items: center; gap: 6px 8px; min-width: 0; color: #9cafbd; font-size: 12px; }.preview-camera-control label { color: #cbd6dc; font-weight: 700; }.preview-camera-control select { flex: 1 1 145px; min-width: min(145px, 100%); max-width: 100%; padding: 8px 28px 8px 10px; border: 1px solid #43535c; border-radius: 8px; background: #101920; color: #eaf0f5; font: inherit; }.preview-camera-control span { flex-basis: 100%; color: #7f929e; font-size: 10px; }.practice-session > .action-link { white-space: nowrap; }
+.action-link { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; min-width: 0; max-width: 100%; min-height: 38px; padding: 9px 15px; border: 1px solid #d3f36b; border-radius: 8px; background: #d3f36b; color: #17220c; font-size: 12px; font-weight: 800; text-decoration: none; }.action-link:hover { background: #e0ff80; color: #17220c; }.action-link:focus-visible { outline: 2px solid #e0ff80; outline-offset: 3px; }.action-link.secondary { border-color: #3c4e58; background: #17242d; color: #eaf0f5; }
+.network-heading, .create-race, .room-controls, .race-row, .room-controls > div { display: flex; align-items: center; gap: 12px; }
+.room-controls > label { display: grid; gap: 4px; color: #91a2ae; font-size: 11px; }
+.room-controls select { min-height: 36px; max-width: 170px; padding: 7px 9px; border: 1px solid #34434e; border-radius: 7px; background: #0b1118; color: #eaf0f5; font: inherit; }
+.network-heading { justify-content: space-between; }.network-heading h2 { margin: 0; font-size: 15px; }.network-heading p { margin: 3px 0 0; color: #91a2ae; font-size: 12px; }.player-id { color: #9cafbd; font-size: 11px; font-variant-numeric: tabular-nums; }
+.create-race { flex-wrap: wrap; margin-top: 14px; }.create-race label { display: grid; gap: 4px; color: #91a2ae; font-size: 11px; }.create-race input, .create-race select { min-height: 36px; padding: 7px 9px; border: 1px solid #34434e; border-radius: 7px; background: #0b1118; color: #eaf0f5; font: inherit; }.create-race input { width: min(280px, 45vw); }.create-race button { align-self: end; min-height: 36px; }
+.race-list { display: grid; gap: 8px; margin-top: 14px; }.empty-races { margin: 0; color: #8296a5; font-size: 12px; }.race-row { justify-content: space-between; padding: 10px 12px; border: 1px solid #263641; border-radius: 9px; color: #cbd6dc; font-size: 12px; }.race-meta { color: #91a2ae; }.room-controls { flex-wrap: wrap; margin-top: 14px; padding-top: 12px; border-top: 1px solid #263641; }.room-controls .room-summary { display: grid; flex: 1; min-width: 200px; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: baseline; }.room-summary > strong { font-size: 13px; }.room-controls span { color: #91a2ae; font-size: 12px; }.room-guidance { grid-column: 1 / -1; margin: 3px 0 0; color: #9cafbd; font-size: 11px; }
+[hidden] { display: none !important; }
+.controls { justify-content: space-between; flex-wrap: wrap; gap: 12px 20px; padding: 14px 2px 0; }.keys { gap: 6px; flex-wrap: wrap; color: #8296a5; font-size: 11px; } kbd { min-width: 21px; padding: 3px 6px; border: 1px solid #34434e; border-bottom-width: 2px; border-radius: 5px; color: #cbd6dc; text-align: center; font: 10px ui-monospace, monospace; } .keys span { margin-right: 10px; }
+button { padding: 9px 13px; border: 1px solid #3c4e58; border-radius: 8px; background: #17242d; color: #eaf0f5; font: inherit; font-size: 12px; cursor: pointer; } button:hover { border-color: #d3f36b; color: #d3f36b; } button:focus-visible { outline: 2px solid #d3f36b; outline-offset: 2px; }
+@media (max-width: 600px) { body { padding: 14px; }.topbar { align-items: flex-start; }.status { max-width: 125px; text-align: right; } canvas.render-surface { height: 58vh; min-height: 320px; }.hud { inset: 9px 9px auto; grid-template-columns: 1.12fr 1fr 1fr; }.hud.has-lap { grid-template-columns: 1.12fr 1fr 1fr .78fr; }.hud-card { padding: 7px 8px; }.hud-card strong { font-size: 17px; }.speed-card strong { font-size: 19px; }.time-card strong { font-size: 14px; }.state-card strong { overflow: hidden; text-overflow: ellipsis; font-size: clamp(8px, 2.6vw, 10px); }.lap-card strong, .lap-card div span { font-size: 14px; }.eyebrow { font-size: 8px; letter-spacing: .1em; }.route-map-panel { right: 9px; bottom: 9px; width: 128px; padding: 5px; }.route-map-panel .eyebrow { font-size: 7px; }#route-map { height: 72px; min-height: 0; }.game.has-route-map .toast { left: 10px; right: 145px; bottom: 10px; max-width: none; transform: none; text-align: center; }.controls { align-items: flex-start; }.keys span { margin-right: 4px; }.practice-entry, .practice-session { align-items: stretch; flex-direction: column; }.practice-session > div:first-child, .preview-camera-control { flex-basis: auto; width: 100%; }.preview-camera-control select { flex: 1 1 145px; }.action-link { align-self: stretch; }.race-row { flex-wrap: wrap; }.race-meta { flex: 1 0 100%; }.create-race { flex-wrap: wrap; }.room-controls { flex-wrap: wrap; }.room-controls .room-summary { flex-basis: 100%; } }
+.hud-race { position: absolute; top: 84px; left: 16px; display: grid; grid-template-columns: repeat(4, auto); overflow: hidden; border: 1px solid #9aabb321; border-radius: 8px; background: #0b1118e8; pointer-events: none; }.hud-race[hidden] { display: none; }.hud-race strong { font-size: 16px; font-variant-numeric: tabular-nums; white-space: nowrap; }@media (max-width: 600px) { .hud-race { top: 66px; left: 9px; }.hud-race strong { font-size: 13px; } }
+
+.ai-setup { display: flex; flex-wrap: wrap; align-items: end; gap: 8px 12px; }
+.ai-setup label, .room-ai label { display: grid; gap: 4px; color: #91a2ae; font-size: 11px; }
+.ai-setup label.check, .room-ai label.check { display: flex; align-items: center; gap: 6px; min-height: 36px; color: #cbd6dc; }
+.ai-setup select, .room-ai select { min-height: 36px; padding: 7px 9px; border: 1px solid #34434e; border-radius: 7px; background: #0b1118; color: #eaf0f5; font: inherit; }
+.ai-note { flex-basis: 100%; color: #7f929e; font-size: 10px; }
+.room-ai { display: flex; flex-wrap: wrap; align-items: end; gap: 8px 12px; }
+/* Canvas HUD (hud plugin hook): one 640x480 sprite overlay scaled as a whole. The card HUD and the
+   route-map card remain as diagnostics (?hud=diag or the footer toggle); the route map then only feeds the overlay. */
+.hud-canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none; image-rendering: pixelated; }
+.game:not(.hud-diagnostics) .hud, .game:not(.hud-diagnostics) .hud-race { display: none; }
+.game:not(.hud-diagnostics) .route-map-panel { top: 0; left: 0; right: auto; bottom: auto; z-index: -1; width: 112px; opacity: 0; }
+.hud-diagnostics-control { display: flex; align-items: center; gap: 8px; }
+
+.project-car-setup { margin-top: 12px; padding: 10px 14px; border: 1px solid #34434e; border-radius: 12px; background: #111b22; }.project-car-setup[hidden] { display: none; }.car-swatch { width: 36px; height: 36px; border: 1px solid #34434e; border-radius: 7px; background: #808080; }
+
+.controls-hint { position: absolute; left: 16px; right: 16px; bottom: 54px; margin: 0; color: #c9d5dcb3; font-size: 11px; text-align: center; text-shadow: 0 1px 3px #000; pointer-events: none; }
+.gear-hint { position: absolute; left: 50%; bottom: 82px; transform: translateX(-50%); padding: 8px 14px; border: 1px solid #d3f36b66; border-radius: 999px; background: #0b1118e6; color: #d3f36b; font-size: 14px; font-weight: 700; pointer-events: none; }
+.gear-hint[hidden] { display: none; }
+.controls-line { margin: 4px 0 0; color: #8296a5; font-size: 11px; }
+.gear-slot[data-gear-kind="reverse"] strong, .gear-slot[data-gear-kind="neutral"] strong { padding: 0 5px; border-radius: 4px; color: #0b1118; }
+.gear-slot[data-gear-kind="reverse"] strong { background: #ff8a65; }
+.gear-slot[data-gear-kind="neutral"] strong { background: #d3f36b; }

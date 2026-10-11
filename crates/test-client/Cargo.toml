@@ -1,0 +1,13 @@
+﻿[package]
+name = "racer-test-client"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lib]
+name = "racer_test_client"
+path = "src/lib.rs"
+
+[lints]
+workspace = true

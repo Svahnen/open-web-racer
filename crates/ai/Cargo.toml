@@ -1,0 +1,21 @@
+[package]
+name = "racer-ai"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Game-neutral computer drivers: lane model, lane choice, target speed, steering servo, recovery and catch-up"
+
+[lib]
+name = "racer_ai"
+path = "src/lib.rs"
+
+[dependencies]
+racer-sim = { path = "../sim", version = "=0.1.0" }
+racer-pack-schema = { path = "../pack-schema", version = "=0.1.0" }
+
+[dev-dependencies]
+serde_json = "=1.0.140"
+
+[lints]
+workspace = true

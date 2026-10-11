@@ -1,0 +1,628 @@
+{
+  "id": "shard-gt",
+  "name": "Shard GT",
+  "data": {
+    "buffers": [
+      {
+        "uri": "buffers/shard-gt.bin",
+        "byte_length": 31660
+      }
+    ],
+    "views": [
+      {
+        "buffer": 0,
+        "byte_offset": 0,
+        "byte_length": 8136
+      },
+      {
+        "buffer": 0,
+        "byte_offset": 8136,
+        "byte_length": 8136
+      },
+      {
+        "buffer": 0,
+        "byte_offset": 16272,
+        "byte_length": 5424
+      },
+      {
+        "buffer": 0,
+        "byte_offset": 21696,
+        "byte_length": 1356
+      },
+      {
+        "buffer": 0,
+        "byte_offset": 23052,
+        "byte_length": 3024
+      },
+      {
+        "buffer": 0,
+        "byte_offset": 26076,
+        "byte_length": 3024
+      },
+      {
+        "buffer": 0,
+        "byte_offset": 29100,
+        "byte_length": 2016
+      },
+      {
+        "buffer": 0,
+        "byte_offset": 31116,
+        "byte_length": 504
+      },
+      {
+        "buffer": 0,
+        "byte_offset": 31620,
+        "byte_length": 32
+      },
+      {
+        "buffer": 0,
+        "byte_offset": 31652,
+        "byte_length": 8
+      }
+    ],
+    "accessors": [
+      {
+        "view": 0,
+        "byte_offset": 0,
+        "component": "f32",
+        "kind": "vec3",
+        "count": 678,
+        "normalized": false
+      },
+      {
+        "view": 1,
+        "byte_offset": 0,
+        "component": "f32",
+        "kind": "vec3",
+        "count": 678,
+        "normalized": false
+      },
+      {
+        "view": 2,
+        "byte_offset": 0,
+        "component": "f32",
+        "kind": "vec2",
+        "count": 678,
+        "normalized": false
+      },
+      {
+        "view": 3,
+        "byte_offset": 0,
+        "component": "u16",
+        "kind": "scalar",
+        "count": 678,
+        "normalized": false
+      },
+      {
+        "view": 4,
+        "byte_offset": 0,
+        "component": "f32",
+        "kind": "vec3",
+        "count": 252,
+        "normalized": false
+      },
+      {
+        "view": 5,
+        "byte_offset": 0,
+        "component": "f32",
+        "kind": "vec3",
+        "count": 252,
+        "normalized": false
+      },
+      {
+        "view": 6,
+        "byte_offset": 0,
+        "component": "f32",
+        "kind": "vec2",
+        "count": 252,
+        "normalized": false
+      },
+      {
+        "view": 7,
+        "byte_offset": 0,
+        "component": "u16",
+        "kind": "scalar",
+        "count": 252,
+        "normalized": false
+      },
+      {
+        "view": 8,
+        "byte_offset": 0,
+        "component": "u8",
+        "kind": "vec4",
+        "count": 8,
+        "normalized": true
+      },
+      {
+        "view": 9,
+        "byte_offset": 0,
+        "component": "u8",
+        "kind": "scalar",
+        "count": 8,
+        "normalized": false
+      }
+    ]
+  },
+  "lods": [
+    {
+      "mesh": {
+        "name": "body",
+        "positions": 0,
+        "normals": 1,
+        "uv": 2,
+        "indices": 3,
+        "primitives": [
+          {
+            "material": 0,
+            "first_index": 0,
+            "index_count": 678
+          }
+        ]
+      }
+    }
+  ],
+  "material_slots": [
+    {
+      "name": "palette",
+      "material": {
+        "name": "palette",
+        "texture": 0,
+        "base_color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "alpha_mode": "opaque",
+        "alpha_cutoff": 0.5,
+        "double_sided": false,
+        "unlit": false
+      },
+      "paintable": true
+    }
+  ],
+  "textures": [
+    {
+      "name": "palette",
+      "width": 8,
+      "height": 1,
+      "pixels": 8,
+      "wrap_u": "clamp",
+      "wrap_v": "clamp",
+      "smooth": false
+    }
+  ],
+  "paint": {
+    "texture": 0,
+    "indexed_pixels": 9,
+    "base_palette": [
+      [
+        232,
+        232,
+        228,
+        255
+      ],
+      [
+        36,
+        92,
+        176,
+        255
+      ],
+      [
+        30,
+        52,
+        66,
+        255
+      ],
+      [
+        28,
+        28,
+        32,
+        255
+      ],
+      [
+        200,
+        203,
+        208,
+        255
+      ],
+      [
+        40,
+        42,
+        46,
+        255
+      ],
+      [
+        250,
+        244,
+        200,
+        255
+      ],
+      [
+        200,
+        28,
+        32,
+        255
+      ]
+    ],
+    "options": [
+      {
+        "name": "signal-red",
+        "kind": "recolour",
+        "entries": [
+          {
+            "index": 0,
+            "color": [
+              200,
+              38,
+              34,
+              255
+            ]
+          },
+          {
+            "index": 1,
+            "color": [
+              236,
+              236,
+              230,
+              255
+            ]
+          }
+        ]
+      },
+      {
+        "name": "harbour-blue",
+        "kind": "recolour",
+        "entries": [
+          {
+            "index": 0,
+            "color": [
+              36,
+              92,
+              176,
+              255
+            ]
+          },
+          {
+            "index": 1,
+            "color": [
+              240,
+              200,
+              40,
+              255
+            ]
+          }
+        ]
+      },
+      {
+        "name": "meadow-green",
+        "kind": "recolour",
+        "entries": [
+          {
+            "index": 0,
+            "color": [
+              48,
+              140,
+              72,
+              255
+            ]
+          },
+          {
+            "index": 1,
+            "color": [
+              30,
+              30,
+              34,
+              255
+            ]
+          }
+        ]
+      },
+      {
+        "name": "solar-yellow",
+        "kind": "recolour",
+        "entries": [
+          {
+            "index": 0,
+            "color": [
+              240,
+              196,
+              36,
+              255
+            ]
+          },
+          {
+            "index": 1,
+            "color": [
+              30,
+              30,
+              34,
+              255
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ember-orange",
+        "kind": "recolour",
+        "entries": [
+          {
+            "index": 0,
+            "color": [
+              232,
+              108,
+              30,
+              255
+            ]
+          },
+          {
+            "index": 1,
+            "color": [
+              230,
+              230,
+              226,
+              255
+            ]
+          }
+        ]
+      },
+      {
+        "name": "graphite",
+        "kind": "recolour",
+        "entries": [
+          {
+            "index": 0,
+            "color": [
+              74,
+              78,
+              86,
+              255
+            ]
+          },
+          {
+            "index": 1,
+            "color": [
+              200,
+              60,
+              50,
+              255
+            ]
+          }
+        ]
+      },
+      {
+        "name": "pearl-white",
+        "kind": "recolour",
+        "entries": [
+          {
+            "index": 0,
+            "color": [
+              232,
+              232,
+              228,
+              255
+            ]
+          },
+          {
+            "index": 1,
+            "color": [
+              36,
+              92,
+              176,
+              255
+            ]
+          }
+        ]
+      },
+      {
+        "name": "plum",
+        "kind": "recolour",
+        "entries": [
+          {
+            "index": 0,
+            "color": [
+              120,
+              48,
+              120,
+              255
+            ]
+          },
+          {
+            "index": 1,
+            "color": [
+              240,
+              200,
+              40,
+              255
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "wheels": [
+    {
+      "name": "wheel_fl",
+      "position": [
+        -0.86,
+        0.32,
+        -1.35
+      ],
+      "radius_m": 0.32,
+      "width_m": 0.26,
+      "steered": true,
+      "driven": false
+    },
+    {
+      "name": "wheel_fr",
+      "position": [
+        0.86,
+        0.32,
+        -1.35
+      ],
+      "radius_m": 0.32,
+      "width_m": 0.26,
+      "steered": true,
+      "driven": false
+    },
+    {
+      "name": "wheel_rl",
+      "position": [
+        -0.86,
+        0.32,
+        1.35
+      ],
+      "radius_m": 0.32,
+      "width_m": 0.26,
+      "steered": false,
+      "driven": true
+    },
+    {
+      "name": "wheel_rr",
+      "position": [
+        0.86,
+        0.32,
+        1.35
+      ],
+      "radius_m": 0.32,
+      "width_m": 0.26,
+      "steered": false,
+      "driven": true
+    }
+  ],
+  "wheel_mesh": {
+    "name": "wheel",
+    "positions": 4,
+    "normals": 5,
+    "uv": 6,
+    "indices": 7,
+    "primitives": [
+      {
+        "material": 0,
+        "first_index": 0,
+        "index_count": 252
+      }
+    ]
+  },
+  "lights": [
+    {
+      "kind": "head",
+      "position": [
+        -0.5456,
+        0.4184,
+        -2.18
+      ],
+      "direction": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "color": [
+        1.0,
+        0.96,
+        0.8,
+        1.0
+      ]
+    },
+    {
+      "kind": "head",
+      "position": [
+        0.5456,
+        0.4184,
+        -2.18
+      ],
+      "direction": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "color": [
+        1.0,
+        0.96,
+        0.8,
+        1.0
+      ]
+    },
+    {
+      "kind": "brake",
+      "position": [
+        -0.5544,
+        0.7312,
+        2.15
+      ],
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "color": [
+        1.0,
+        0.1,
+        0.08,
+        1.0
+      ]
+    },
+    {
+      "kind": "brake",
+      "position": [
+        0.5544,
+        0.7312,
+        2.15
+      ],
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "color": [
+        1.0,
+        0.1,
+        0.08,
+        1.0
+      ]
+    }
+  ],
+  "cameras": [
+    {
+      "name": "chase",
+      "position": [
+        0.0,
+        2.23,
+        5.85
+      ],
+      "forward": [
+        0.0,
+        -0.11914522,
+        -0.9928768
+      ],
+      "fov_deg": 70.0
+    },
+    {
+      "name": "driver",
+      "position": [
+        -0.35,
+        1.11,
+        -0.1
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "fov_deg": 80.0
+    }
+  ],
+  "mirrors": [],
+  "collision": {
+    "half_extents_m": [
+      0.99,
+      0.665,
+      2.25
+    ],
+    "center": [
+      0.0,
+      0.665,
+      0.0
+    ]
+  }
+}

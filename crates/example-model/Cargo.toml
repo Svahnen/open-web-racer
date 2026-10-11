@@ -1,0 +1,18 @@
+[package]
+name = "racer-example-model"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Tiny generic vehicle model provider showing how a separate crate plugs into the engine"
+
+[lib]
+name = "racer_example_model"
+path = "src/lib.rs"
+
+[dependencies]
+racer-sim = { path = "../sim", version = "=0.1.0" }
+serde_json = "=1.0.140"
+
+[lints]
+workspace = true

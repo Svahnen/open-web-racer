@@ -1,0 +1,158 @@
+{
+  "schema": "classic-feel-targets-v1",
+  "tuning_tick_hz": 32,
+  "launch": {
+    "start_delay_ticks": [9, 11],
+    "time_to_speed_s": [
+      { "speed_mps": 13.41, "time_s": 1.035, "tolerance_s": 0.12 },
+      { "speed_mps": 26.82, "time_s": 1.675, "tolerance_s": 0.12 },
+      { "speed_mps": 44.70, "time_s": 4.035, "tolerance_s": 0.15 },
+      { "speed_mps": 58.11, "time_s": 6.185, "tolerance_s": 0.15 }
+    ],
+    "speed_after_8s_mps": { "value": 66.7, "tolerance": 1.5 },
+    "command_ramp_per_tick": { "throttle_up": 16, "brake_to_full_ticks": 4, "full_scale": 248 }
+  },
+  "gearbox_auto": {
+    "gear_count": 5,
+    "upshift_mps": [27.45, 39.92, 52.30, 62.32],
+    "upshift_tolerance_mps": 0.45,
+    "downshift_mps": [22.76, 33.13, 44.53, 53.20],
+    "downshift_tolerance_mps": 1.8,
+    "start_gear": 1,
+    "shift_pause_ticks": { "automatic": 8.8, "manual": 9.5, "tolerance": 2.0 }
+  },
+  "coast": {
+    "deceleration_bands_mps2": [
+      { "from_mps": 62.58, "to_mps": 44.70, "decel": 9.08, "relative_tolerance": 0.15 },
+      { "from_mps": 44.70, "to_mps": 26.82, "decel": 9.40, "relative_tolerance": 0.15 },
+      { "from_mps": 26.82, "to_mps": 13.41, "decel": 6.11, "relative_tolerance": 0.18 }
+    ],
+    "low_speed_time_constant_s": { "value": 3.0, "tolerance": 0.8, "below_mps": 5.0 }
+  },
+  "brake": {
+    "tail_decel_mps2": { "value": 22.0, "tolerance": 2.0, "below_mps": 12.0 },
+    "stop_time_s": [
+      { "from_mps": 51.7, "time_s": 1.22, "tolerance_s": 0.2 },
+      { "from_mps": 30.9, "time_s": 1.13, "tolerance_s": 0.2 }
+    ],
+    "no_motion_from_rest_s": 4.0
+  },
+  "steering": {
+    "lock_command": 124,
+    "ramp_up_per_tick": 16,
+    "ramp_down_per_tick": 32,
+    "ticks_to_full_lock": 8,
+    "ticks_to_centre": 4,
+    "command_delay_ticks": 1,
+    "knee_speed_mps": 20.5,
+    "low_branch_rate_rad_s": 1.7313,
+    "low_branch_tolerance": 0.005,
+    "full_lock_rate_rad_s": [
+      { "speed_mps": 22.0, "rate": 1.146 },
+      { "speed_mps": 30.0, "rate": 0.986 },
+      { "speed_mps": 40.0, "rate": 0.877 },
+      { "speed_mps": 50.0, "rate": 0.779 }
+    ],
+    "high_branch_tolerance": 0.04,
+    "knee_drop_fraction": [0.63, 0.68],
+    "scaling_exponents": { "grip": 0.733, "gain": 0.877, "grip_ref": 3.0, "gain_ref": 18.0 },
+    "low_branch_per_gain": 0.0951,
+    "travel_lead_ticks": 1.0,
+    "travel_lead_tolerance_rad": 0.005,
+    "pulse_heading_deg": [
+      { "speed_mps": 10.7, "hold_ticks": 9, "heading_deg": 21.9, "tolerance_deg": 3.0 },
+      { "speed_mps": 29.4, "hold_ticks": 20, "heading_deg": 32.7, "tolerance_deg": 4.0 }
+    ]
+  },
+  "camera": {
+    "lag_gain_per_tick": 0.365,
+    "lag_ticks_per_rad_s": 1.74,
+    "peak_lead_deg_at_full_lock": [5.3, 5.9],
+    "follows": "body_heading"
+  },
+  "handbrake": {
+    "no_steer": {
+      "start_mps": 26.5,
+      "hold_ticks": 28,
+      "end_speed_mps": 20.0,
+      "end_tolerance_mps": 1.8,
+      "heading_change_rad_max": 0.001
+    },
+    "slide": {
+      "start_mps": 26.5,
+      "offset_deg_at_ticks": [
+        { "tick": 8, "deg": 14.0 },
+        { "tick": 18, "deg": 35.0 },
+        { "tick": 31, "deg": 69.0 }
+      ],
+      "offset_tolerance_deg": 12.0,
+      "peak_yaw_rate_rad_s": [3.3, 4.1],
+      "recovery_per_tick": { "value": 0.90, "tolerance": 0.03 }
+    }
+  },
+  "reverse": {
+    "speed_at_s_mps": [
+      { "time_s": 0.6, "speed": 6.0, "tolerance": 1.5 },
+      { "time_s": 1.1, "speed": 15.0, "tolerance": 2.0 },
+      { "time_s": 1.5, "speed": 22.0, "tolerance": 2.0 },
+      { "time_s": 1.65, "speed": 26.0, "tolerance": 2.0 },
+      { "time_s": 2.6, "speed": 29.4, "tolerance": 1.5 }
+    ],
+    "top_speed_mps": 29.4,
+    "coast_time_s": { "from_mps": 28.5, "to_mps": 10.0, "time": [1.8, 2.6] },
+    "brake_time_s": [
+      { "from_mps": 22.0, "time": [0.8, 1.25] },
+      { "from_mps": 29.0, "time": [1.0, 1.45] }
+    ],
+    "selected_while_moving": [
+      { "from_mps": 30.1, "throttle": 1.0, "stop_time_s": 1.2, "tolerance_s": 0.3 },
+      { "from_mps": 21.3, "throttle": 0.0, "stop_time_s": 1.1, "tolerance_s": 0.3 }
+    ]
+  },
+  "gearbox_modes": {
+    "automatic_key_sequence": {
+      "keys": ["down", "down", "down", "up", "up", "up", "down", "down"],
+      "selector": ["N", "R", "R", "N", "1", "1", "N", "R"]
+    },
+    "manual_ladder": {
+      "start": "N",
+      "gears": 6,
+      "after_up": ["1", "2", "3", "4", "5", "6", "6", "6", "6"],
+      "after_down": ["5", "4", "3", "2", "1", "N", "R", "R", "R"]
+    },
+    "rev_hold": {
+      "rpm_fraction_of_limit": 0.984,
+      "speed_locked_after_s": 4.0,
+      "max_speed_wobble_mps": 0.05
+    },
+    "neutral_drag_mps2_at_30mps": { "value": 1.0, "tolerance": 0.4 },
+    "neutral_throttle_rpm_fraction_min": 0.99
+  },
+  "wall_contact": {
+    "car_half_width_m": 1.05,
+    "car_half_length_m": 2.2,
+    "restitution": 0.0,
+    "friction": 0.73,
+    "heading_gain_per_tick": 0.19,
+    "shallow_hit": {
+      "speed_mps": 40.7,
+      "angle_rad": 0.33,
+      "speeds_after_hits_mps": [27.5, 20.4, 16.3, 13.8],
+      "tolerance_mps": 1.8,
+      "first_hit_ratio": { "model": "1 - sin(angle)", "tolerance": 0.06 }
+    },
+    "head_on_stops": true,
+    "rest_gap_m": [1.05, 1.25]
+  },
+  "car_ranges": {
+    "steer_gain": [18.0, 20.0],
+    "grip": [2.8, 3.6],
+    "top_speed_mps": [79.0, 104.0],
+    "first_upshift_mps": [22.0, 27.5],
+    "reverse_speed_mps": [22.0, 30.0],
+    "shift_seconds": [0.25, 0.31],
+    "accel_scale": [0.5, 1.1],
+    "gear_count": [5, 6],
+    "low_speed_yaw_rate_rad_s": [1.70, 1.91]
+  }
+}

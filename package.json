@@ -1,0 +1,16 @@
+{
+  "name": "open-web-racer",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/web/*.test.mjs\"",
+    "test:web": "node --test \"tests/web/*.test.mjs\"",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "install:browsers": "playwright install chromium firefox"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}

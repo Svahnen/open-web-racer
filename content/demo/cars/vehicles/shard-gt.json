@@ -1,0 +1,80 @@
+{
+  "id": "shard-gt",
+  "name": "Shard GT",
+  "car": "shard-gt",
+  "arcade": {
+    "mass_kg": 1350.0,
+    "wheelbase_m": 2.7,
+    "track_width_m": 1.72,
+    "wheel_radius_m": 0.32,
+    "peak_torque_nm": 520.0,
+    "idle_rpm": 900.0,
+    "redline_rpm": 7800.0,
+    "gear_ratios": [
+      3.2,
+      2.1,
+      1.5,
+      1.12,
+      0.88,
+      0.72
+    ],
+    "reverse_ratio": 3.0,
+    "final_drive": 3.4,
+    "drivetrain_efficiency": 0.88,
+    "max_brake_force_n": 14000.0,
+    "drag_area_m2": 0.66,
+    "downforce_area_m2": 0.45,
+    "rolling_resistance": 0.011,
+    "tyre_grip": 1.2,
+    "max_steer_angle_rad": 0.5,
+    "steer_falloff_speed_mps": 45.0,
+    "max_speed_mps": 78.0,
+    "front_drive_bias": 0.0,
+    "steer_rate_per_s": 4.8,
+    "steer_return_per_s": 6.5,
+    "lateral_grip_per_s": 7.6
+  },
+  "classic": {
+    "upshift_mps": [
+      22.0,
+      30.8,
+      41.3,
+      52.3,
+      64.2
+    ],
+    "downshift_mps": [
+      18.3,
+      25.6,
+      34.5,
+      44.1,
+      54.2
+    ],
+    "top_speed_mps": 82.0,
+    "accel_scale": 0.52,
+    "coast_scale": 1.0,
+    "brake_scale": 1.0,
+    "shift_seconds": 0.2755,
+    "reverse_speed_mps": 24.8,
+    "steer_gain": 18.0,
+    "grip": 3.0,
+    "low_speed_yaw_rate": 1.7114,
+    "yaw_boost_speed_mps": 58.0
+  },
+  "engine_sound": {
+    "idle_rpm": 900.0,
+    "redline_rpm": 7800.0,
+    "cylinders": 8,
+    "harmonics": [
+      1.0,
+      0.5,
+      0.4,
+      0.3,
+      0.15
+    ],
+    "filter_hz_idle": 450.0,
+    "filter_hz_redline": 3000.0,
+    "noise_gain": 0.09,
+    "gain_idle": 0.34,
+    "gain_redline": 0.65
+  }
+}

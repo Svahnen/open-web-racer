@@ -1,0 +1,22 @@
+[package]
+name = "racer-trackgen"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Deterministic procedural generator of project-owned Racer Content Pack (RCP v1) tracks"
+
+[lib]
+name = "racer_trackgen"
+path = "src/lib.rs"
+
+[[bin]]
+name = "racer-trackgen"
+path = "src/main.rs"
+
+[dependencies]
+racer-pack-schema = { path = "../pack-schema", version = "=0.1.0" }
+sha2 = "=0.10.9"
+
+[lints]
+workspace = true

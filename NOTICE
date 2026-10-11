@@ -1,0 +1,9 @@
+Open Web Racer
+Copyright 2026 Jonny Svahn (Svahnen)
+
+This product includes software and content developed by the Jonny Svahn (Svahnen)
+and is licensed under the Apache License, Version 2.0.
+
+Third-party dependencies are used under their own licenses; see
+THIRD_PARTY_LICENSES.md where present and the Cargo.lock / package-lock.json
+files for the resolved versions. No third-party game data is included.

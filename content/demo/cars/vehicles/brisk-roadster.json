@@ -1,0 +1,76 @@
+{
+  "id": "brisk-roadster",
+  "name": "Brisk Roadster",
+  "car": "brisk-roadster",
+  "arcade": {
+    "mass_kg": 980.0,
+    "wheelbase_m": 2.3,
+    "track_width_m": 1.5,
+    "wheel_radius_m": 0.3,
+    "peak_torque_nm": 260.0,
+    "idle_rpm": 1000.0,
+    "redline_rpm": 7600.0,
+    "gear_ratios": [
+      3.5,
+      2.3,
+      1.65,
+      1.2,
+      0.95
+    ],
+    "reverse_ratio": 3.3,
+    "final_drive": 3.9,
+    "drivetrain_efficiency": 0.88,
+    "max_brake_force_n": 9000.0,
+    "drag_area_m2": 0.58,
+    "downforce_area_m2": 0.0,
+    "rolling_resistance": 0.012,
+    "tyre_grip": 1.0,
+    "max_steer_angle_rad": 0.58,
+    "steer_falloff_speed_mps": 40.0,
+    "max_speed_mps": 56.0,
+    "front_drive_bias": 0.0,
+    "steer_rate_per_s": 5.4,
+    "steer_return_per_s": 7.5,
+    "lateral_grip_per_s": 7.5
+  },
+  "classic": {
+    "upshift_mps": [
+      25.8,
+      36.9,
+      48.4,
+      59.8
+    ],
+    "downshift_mps": [
+      21.4,
+      30.6,
+      41.1,
+      50.9
+    ],
+    "top_speed_mps": 84.0,
+    "accel_scale": 1.04,
+    "coast_scale": 0.95,
+    "brake_scale": 1.0,
+    "shift_seconds": 0.255,
+    "reverse_speed_mps": 27.0,
+    "steer_gain": 19.0,
+    "grip": 3.1,
+    "low_speed_yaw_rate": 1.807,
+    "yaw_boost_speed_mps": 66.0
+  },
+  "engine_sound": {
+    "idle_rpm": 1000.0,
+    "redline_rpm": 7600.0,
+    "cylinders": 4,
+    "harmonics": [
+      1.0,
+      0.6,
+      0.3,
+      0.25
+    ],
+    "filter_hz_idle": 650.0,
+    "filter_hz_redline": 3800.0,
+    "noise_gain": 0.07,
+    "gain_idle": 0.28,
+    "gain_redline": 0.55
+  }
+}

@@ -1,0 +1,24 @@
+﻿[package]
+name = "racer-render"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lib]
+name = "racer_render"
+path = "src/lib.rs"
+
+[dependencies]
+racer-sim = { path = "../sim", version = "=0.1.0" }
+bytemuck = { version = "1.21", features = ["derive"] }
+wgpu = { version = "0.19.4", features = ["webgl"] }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = "0.2"
+js-sys = "0.3"
+wasm-bindgen-futures = "0.4"
+web-sys = { version = "0.3", features = ["HtmlCanvasElement", "Navigator", "Window"] }
+
+[lints]
+workspace = true

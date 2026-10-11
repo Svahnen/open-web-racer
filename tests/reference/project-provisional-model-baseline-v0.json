@@ -1,0 +1,1388 @@
+{
+  "cases": {
+    "collision_preview_custom_policy_and_wall": {
+      "initial": {
+        "angular_velocity": 0.0,
+        "checkpoint": 0,
+        "completed_laps": 0,
+        "finished": false,
+        "ground_normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "heading": 0.0,
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "race_ticks": 0,
+        "velocity": [
+          25.0,
+          2.0
+        ],
+        "world_tick": 0
+      },
+      "inputs": [
+        [
+          0.5,
+          0.0,
+          0.25,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.25,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.25,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.25,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.25,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.25,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.25,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.25,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.25,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.25,
+          false,
+          false
+        ]
+      ],
+      "outputs": [
+        {
+          "angular_velocity": 0.45,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "heading": 0.0075,
+          "position": [
+            0.4180511111111111,
+            0.03112119903538515,
+            0.0
+          ],
+          "race_ticks": 1,
+          "velocity": [
+            25.083066666666667,
+            1.867271942123109
+          ],
+          "world_tick": 1
+        },
+        {
+          "angular_velocity": 0.45,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "heading": 0.015,
+          "position": [
+            0.8374973444669751,
+            0.06039561410220781,
+            0.0
+          ],
+          "race_ticks": 2,
+          "velocity": [
+            25.166774001351843,
+            1.7564649040093598
+          ],
+          "world_tick": 2
+        },
+        {
+          "angular_velocity": 0.45,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "heading": 0.0225,
+          "position": [
+            1.2583443987631855,
+            0.08816584837855704,
+            0.0
+          ],
+          "race_ticks": 3,
+          "velocity": [
+            25.25082325777262,
+            1.6662140565809531
+          ],
+          "world_tick": 3
+        },
+        {
+          "angular_velocity": 0.45,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "heading": 0.03,
+          "position": [
+            1.6805934677107932,
+            0.11475319962959947,
+            0.0
+          ],
+          "race_ticks": 4,
+          "velocity": [
+            25.334944136856468,
+            1.5952410750625459
+          ],
+          "world_tick": 4
+        },
+        {
+          "angular_velocity": 0.45,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "heading": 0.0375,
+          "position": [
+            2.1042416730981137,
+            0.14045901059587115,
+            0.0
+          ],
+          "race_ticks": 5,
+          "velocity": [
+            25.418892323239234,
+            1.5423486579763008
+          ],
+          "world_tick": 5
+        },
+        {
+          "angular_velocity": 0.45,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "heading": 0.045,
+          "position": [
+            2.5292824601283024,
+            0.1655659337368929,
+            0.0
+          ],
+          "race_ticks": 6,
+          "velocity": [
+            25.502447221811323,
+            1.5064153884613047
+          ],
+          "world_tick": 6
+        },
+        {
+          "angular_velocity": 0.45,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "heading": 0.0525,
+          "position": [
+            2.7499,
+            0.1903391156846606,
+            0.0
+          ],
+          "race_ticks": 7,
+          "velocity": [
+            0.0,
+            1.4863909168660625
+          ],
+          "world_tick": 7
+        },
+        {
+          "angular_velocity": 0.011863707064458726,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "heading": 0.05269772845107431,
+          "position": [
+            2.7499,
+            0.2135890201321956,
+            0.0
+          ],
+          "race_ticks": 8,
+          "velocity": [
+            0.0,
+            1.3949942668521003
+          ],
+          "world_tick": 8
+        },
+        {
+          "angular_velocity": 0.011609927861532069,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "heading": 0.05289122724876651,
+          "position": [
+            2.7499,
+            0.23541693690635604,
+            0.0
+          ],
+          "race_ticks": 9,
+          "velocity": [
+            0.0,
+            1.3096750064496265
+          ],
+          "world_tick": 9
+        },
+        {
+          "angular_velocity": 0.011371849674928781,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "heading": 0.05308075807668199,
+          "position": [
+            2.7499,
+            0.25591743809504336,
+            0.0
+          ],
+          "race_ticks": 10,
+          "velocity": [
+            0.0,
+            1.2300300713212384
+          ],
+          "world_tick": 10
+        }
+      ],
+      "policy": "collision preview: custom drive 16/27/55 and grip 4/0.8 per second; flat synthetic ground and wall",
+      "wall_x": 3.0
+    },
+    "collision_preview_sloped_support": {
+      "initial": {
+        "angular_velocity": 0.0,
+        "checkpoint": 0,
+        "completed_laps": 0,
+        "finished": false,
+        "ground_normal": [
+          -0.09950371902099892,
+          0.0,
+          0.9950371902099892
+        ],
+        "heading": 0.0,
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "race_ticks": 0,
+        "velocity": [
+          15.0,
+          0.0
+        ],
+        "world_tick": 0
+      },
+      "inputs": [
+        [
+          0.5,
+          0.0,
+          0.0,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.0,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.0,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.0,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.0,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.0,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.0,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.0,
+          0.0,
+          false,
+          false
+        ]
+      ],
+      "outputs": [
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            -0.09950371902099892,
+            0.0,
+            0.9950371902099892
+          ],
+          "heading": 0.0,
+          "position": [
+            0.25199499999999997,
+            0.0,
+            0.02519950000000004
+          ],
+          "race_ticks": 1,
+          "velocity": [
+            15.1197,
+            0.0
+          ],
+          "world_tick": 1
+        },
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            -0.09950371902099892,
+            0.0,
+            0.9950371902099892
+          ],
+          "heading": 0.0,
+          "position": [
+            0.50598101,
+            0.0,
+            0.05059810099999995
+          ],
+          "race_ticks": 2,
+          "velocity": [
+            15.2391606,
+            0.0
+          ],
+          "world_tick": 2
+        },
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            -0.09950371902099892,
+            0.0,
+            0.9950371902099892
+          ],
+          "heading": 0.0,
+          "position": [
+            0.76195404798,
+            0.0,
+            0.07619540479799991
+          ],
+          "race_ticks": 3,
+          "velocity": [
+            15.3583822788,
+            0.0
+          ],
+          "world_tick": 3
+        },
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            -0.09950371902099892,
+            0.0,
+            0.9950371902099892
+          ],
+          "heading": 0.0,
+          "position": [
+            1.01991013988404,
+            0.0,
+            0.10199101398840393
+          ],
+          "race_ticks": 4,
+          "velocity": [
+            15.4773655142424,
+            0.0
+          ],
+          "world_tick": 4
+        },
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            -0.09950371902099892,
+            0.0,
+            0.9950371902099892
+          ],
+          "heading": 0.0,
+          "position": [
+            1.2798453196042718,
+            0.0,
+            0.12798453196042714
+          ],
+          "race_ticks": 5,
+          "velocity": [
+            15.596110783213916,
+            0.0
+          ],
+          "world_tick": 5
+        },
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            -0.09950371902099892,
+            0.0,
+            0.9950371902099892
+          ],
+          "heading": 0.0,
+          "position": [
+            1.5417556289650634,
+            0.0,
+            0.15417556289650636
+          ],
+          "race_ticks": 6,
+          "velocity": [
+            15.71461856164749,
+            0.0
+          ],
+          "world_tick": 6
+        },
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            -0.09950371902099892,
+            0.0,
+            0.9950371902099892
+          ],
+          "heading": 0.0,
+          "position": [
+            1.8056371177071333,
+            0.0,
+            0.1805637117707134
+          ],
+          "race_ticks": 7,
+          "velocity": [
+            15.832889324524194,
+            0.0
+          ],
+          "world_tick": 7
+        },
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            -0.09950371902099892,
+            0.0,
+            0.9950371902099892
+          ],
+          "heading": 0.0,
+          "position": [
+            2.071485843471719,
+            0.0,
+            0.20714858434717198
+          ],
+          "race_ticks": 8,
+          "velocity": [
+            15.950923545875145,
+            0.0
+          ],
+          "world_tick": 8
+        }
+      ],
+      "policy": "collision preview default policy; synthetic plane z=0.1*x"
+    },
+    "finished_caller_invariant": {
+      "initial": {
+        "angular_velocity": -1.5,
+        "checkpoint": 0,
+        "completed_laps": 0,
+        "finished": true,
+        "ground_normal": null,
+        "heading": 0.75,
+        "position": [
+          1.0,
+          2.0,
+          0.0
+        ],
+        "race_ticks": 9,
+        "velocity": [
+          3.0,
+          4.0
+        ],
+        "world_tick": 0
+      },
+      "inputs": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          false,
+          true
+        ]
+      ],
+      "outputs": [
+        {
+          "angular_velocity": -1.5,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": true,
+          "ground_normal": null,
+          "heading": 0.75,
+          "position": [
+            1.0,
+            2.0,
+            0.0
+          ],
+          "race_ticks": 9,
+          "velocity": [
+            3.0,
+            4.0
+          ],
+          "world_tick": 1
+        }
+      ],
+      "policy": "finished early-return; reset and kinematics bypassed"
+    },
+    "generic": {
+      "initial": {
+        "angular_velocity": 0.0,
+        "checkpoint": 0,
+        "completed_laps": 0,
+        "finished": false,
+        "ground_normal": null,
+        "heading": 0.3,
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "race_ticks": 0,
+        "velocity": [
+          3.0,
+          -1.0
+        ],
+        "world_tick": 0
+      },
+      "inputs": [
+        [
+          1.0,
+          0.0,
+          0.5,
+          false,
+          false
+        ],
+        [
+          1.0,
+          0.0,
+          0.5,
+          false,
+          false
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          false,
+          false
+        ],
+        [
+          0.0,
+          0.4,
+          -0.75,
+          false,
+          false
+        ],
+        [
+          0.5,
+          0.25,
+          2.0,
+          false,
+          false
+        ],
+        [
+          -1.0,
+          0.0,
+          -2.0,
+          false,
+          false
+        ]
+      ],
+      "outputs": [
+        {
+          "angular_velocity": 0.3557562367689427,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.3059292706128157,
+          "position": [
+            0.05307808605382452,
+            -0.01565023611250661,
+            0.0
+          ],
+          "race_ticks": 1,
+          "velocity": [
+            3.1846851632294713,
+            -0.9390141667503966
+          ],
+          "world_tick": 1
+        },
+        {
+          "angular_velocity": 0.3735265516696908,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.3121547131406439,
+          "position": [
+            0.1092222171094292,
+            -0.030267248191085047,
+            0.0
+          ],
+          "race_ticks": 2,
+          "velocity": [
+            3.368647863336281,
+            -0.8770207247147064
+          ],
+          "world_tick": 2
+        },
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.3121547131406439,
+          "position": [
+            0.16525405990292266,
+            -0.04485502624550633,
+            0.0
+          ],
+          "race_ticks": 3,
+          "velocity": [
+            3.361910567609608,
+            -0.875266683265277
+          ],
+          "world_tick": 3
+        },
+        {
+          "angular_velocity": -0.5862340616343312,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.3023841454467384,
+          "position": [
+            0.21906323746036424,
+            -0.06009473032712341,
+            0.0
+          ],
+          "race_ticks": 4,
+          "velocity": [
+            3.228550653446495,
+            -0.9143822448970248
+          ],
+          "world_tick": 4
+        },
+        {
+          "angular_velocity": 0.7549960145357845,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.31496741235566816,
+          "position": [
+            0.27302944109410165,
+            -0.07522139904732654,
+            0.0
+          ],
+          "race_ticks": 5,
+          "velocity": [
+            3.2379722180242436,
+            -0.9076001232121874
+          ],
+          "world_tick": 5
+        },
+        {
+          "angular_velocity": -0.7566225807562849,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.3023570360097301,
+          "position": [
+            0.32688771232057157,
+            -0.09031781443008925,
+            0.0
+          ],
+          "race_ticks": 6,
+          "velocity": [
+            3.231496273588195,
+            -0.9057849229657631
+          ],
+          "world_tick": 6
+        }
+      ],
+      "policy": "generic drive: acceleration 12, braking 20, cap 45; no lateral recovery"
+    },
+    "generic_speed_cap_transition": {
+      "initial": {
+        "angular_velocity": 0.0,
+        "checkpoint": 0,
+        "completed_laps": 0,
+        "finished": false,
+        "ground_normal": null,
+        "heading": 0.0,
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "race_ticks": 0,
+        "velocity": [
+          44.9,
+          0.0
+        ],
+        "world_tick": 0
+      },
+      "inputs": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          false,
+          false
+        ]
+      ],
+      "outputs": [
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.0,
+          "position": [
+            0.75,
+            0.0,
+            0.0
+          ],
+          "race_ticks": 1,
+          "velocity": [
+            45.0,
+            0.0
+          ],
+          "world_tick": 1
+        }
+      ],
+      "policy": "generic drive: acceleration 12, braking 20, cap 45; initial forward speed 44.9"
+    },
+    "non_finite_input_normalization": {
+      "initial": {
+        "angular_velocity": 0.0,
+        "checkpoint": 0,
+        "completed_laps": 0,
+        "finished": false,
+        "ground_normal": null,
+        "heading": 0.0,
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "race_ticks": 0,
+        "velocity": [
+          2.0,
+          -3.0
+        ],
+        "world_tick": 0
+      },
+      "input_descriptors": [
+        {
+          "brake": "+Inf",
+          "handbrake": false,
+          "steer": "-Inf",
+          "throttle": "NaN"
+        },
+        {
+          "brake": "NaN",
+          "handbrake": false,
+          "steer": "+Inf",
+          "throttle": "+Inf"
+        }
+      ],
+      "outputs": [
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.0,
+          "position": [
+            0.03326666666666667,
+            -0.04989999999999999,
+            0.0
+          ],
+          "race_ticks": 1,
+          "velocity": [
+            1.996,
+            -2.9939999999999998
+          ],
+          "world_tick": 1
+        },
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.0,
+          "position": [
+            0.06646679999999999,
+            -0.09970019999999999,
+            0.0
+          ],
+          "race_ticks": 2,
+          "velocity": [
+            1.992008,
+            -2.988012
+          ],
+          "world_tick": 2
+        }
+      ],
+      "policy": "generic drive; RaceWorld finite_clamp maps non-finite throttle/brake/steer to zero"
+    },
+    "reset_caller_invariant": {
+      "initial": {
+        "angular_velocity": 3.0,
+        "checkpoint": 0,
+        "completed_laps": 0,
+        "finished": false,
+        "ground_normal": null,
+        "heading": 2.0,
+        "position": [
+          4.0,
+          -2.0,
+          7.0
+        ],
+        "race_ticks": 17,
+        "velocity": [
+          5.0,
+          6.0
+        ],
+        "world_tick": 0
+      },
+      "inputs": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          false,
+          true
+        ]
+      ],
+      "outputs": [
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.0,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "race_ticks": 17,
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "world_tick": 1
+        }
+      ],
+      "policy": "reset branch; kinematics bypassed"
+    },
+    "shared_preview_without_collision": {
+      "initial": {
+        "angular_velocity": 0.0,
+        "checkpoint": 0,
+        "completed_laps": 0,
+        "finished": false,
+        "ground_normal": null,
+        "heading": 0.4,
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "race_ticks": 0,
+        "velocity": [
+          8.0,
+          6.0
+        ],
+        "world_tick": 0
+      },
+      "inputs": [
+        [
+          0.6,
+          0.0,
+          0.8,
+          false,
+          false
+        ],
+        [
+          0.6,
+          0.0,
+          0.8,
+          true,
+          false
+        ],
+        [
+          0.0,
+          0.3,
+          -0.4,
+          true,
+          false
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          false,
+          false
+        ]
+      ],
+      "outputs": [
+        {
+          "angular_velocity": 1.4400000000000002,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.42400000000000004,
+          "position": [
+            0.13707298608791849,
+            0.09801255325492705,
+            0.0
+          ],
+          "race_ticks": 1,
+          "velocity": [
+            8.22437916527511,
+            5.880753195295624
+          ],
+          "world_tick": 1
+        },
+        {
+          "angular_velocity": 2.16,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.4600000000000001,
+          "position": [
+            0.27682425652701537,
+            0.19656558746005212,
+            0.0
+          ],
+          "race_ticks": 2,
+          "velocity": [
+            8.385076226345813,
+            5.913182052307504
+          ],
+          "world_tick": 2
+        },
+        {
+          "angular_velocity": -1.08,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.44200000000000006,
+          "position": [
+            0.4142527258557524,
+            0.29342562631780394,
+            0.0
+          ],
+          "race_ticks": 3,
+          "velocity": [
+            8.245708159724222,
+            5.811602331465108
+          ],
+          "world_tick": 3
+        },
+        {
+          "angular_velocity": 0.0,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.44200000000000006,
+          "position": [
+            0.5523882204153212,
+            0.3880170760960198,
+            0.0
+          ],
+          "race_ticks": 4,
+          "velocity": [
+            8.28812967357413,
+            5.6754869866929525
+          ],
+          "world_tick": 4
+        }
+      ],
+      "policy": "shared preview: default preview drive and grip policies"
+    },
+    "shared_reverse_body_forward_steering": {
+      "initial": {
+        "angular_velocity": 0.0,
+        "checkpoint": 0,
+        "completed_laps": 0,
+        "finished": false,
+        "ground_normal": null,
+        "heading": 0.4,
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "race_ticks": 0,
+        "velocity": [
+          -7.368487952023081,
+          -3.115346738469204
+        ],
+        "world_tick": 0
+      },
+      "inputs": [
+        [
+          0.0,
+          0.0,
+          0.5,
+          false,
+          false
+        ],
+        [
+          0.0,
+          0.0,
+          0.5,
+          false,
+          false
+        ],
+        [
+          0.0,
+          0.0,
+          0.5,
+          false,
+          false
+        ]
+      ],
+      "outputs": [
+        {
+          "angular_velocity": -0.8982,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.38503000000000004,
+          "position": [
+            -0.12256251626865057,
+            -0.051818600749871095,
+            0.0
+          ],
+          "race_ticks": 1,
+          "velocity": [
+            -7.353750976119034,
+            -3.1091160449922657
+          ],
+          "world_tick": 1
+        },
+        {
+          "angular_velocity": -0.8963031594489943,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.37009161400918344,
+          "position": [
+            -0.24493960617928848,
+            -0.10338625362426793,
+            0.0
+          ],
+          "race_ticks": 2,
+          "velocity": [
+            -7.342625394638275,
+            -3.09405917246381
+          ],
+          "world_tick": 2
+        },
+        {
+          "angular_velocity": -0.8942266974784702,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": null,
+          "heading": 0.3551878357178756,
+          "position": [
+            -0.3671819739281541,
+            -0.15456716053748404,
+            0.0
+          ],
+          "race_ticks": 3,
+          "velocity": [
+            -7.33454206493194,
+            -3.0708544147929677
+          ],
+          "world_tick": 3
+        }
+      ],
+      "policy": "shared preview default policy; negative body-forward speed"
+    },
+    "shared_with_collision_policy_precedence": {
+      "initial": {
+        "angular_velocity": 0.0,
+        "checkpoint": 0,
+        "completed_laps": 0,
+        "finished": false,
+        "ground_normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "heading": -0.2,
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "race_ticks": 0,
+        "velocity": [
+          10.0,
+          -5.0
+        ],
+        "world_tick": 0
+      },
+      "inputs": [
+        [
+          0.4,
+          0.0,
+          -0.6,
+          true,
+          false
+        ],
+        [
+          0.4,
+          0.0,
+          -0.6,
+          true,
+          false
+        ],
+        [
+          0.0,
+          0.2,
+          0.2,
+          false,
+          false
+        ]
+      ],
+      "outputs": [
+        {
+          "angular_velocity": -1.62,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "heading": 6.056185307179586,
+          "position": [
+            0.16844868668069096,
+            -0.08277814612471432,
+            0.0
+          ],
+          "race_ticks": 1,
+          "velocity": [
+            10.106921200841457,
+            -4.966688767482859
+          ],
+          "world_tick": 1
+        },
+        {
+          "angular_velocity": -1.62,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "heading": 6.029185307179586,
+          "position": [
+            0.3386639542626575,
+            -0.165152947826122,
+            0.0
+          ],
+          "race_ticks": 2,
+          "velocity": [
+            10.212916054917992,
+            -4.942488102084461
+          ],
+          "world_tick": 2
+        },
+        {
+          "angular_velocity": 0.36000000000000004,
+          "checkpoint": 0,
+          "completed_laps": 0,
+          "finished": false,
+          "ground_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "heading": 6.035185307179586,
+          "position": [
+            0.5076699164773937,
+            -0.24409037937570063,
+            0.0
+          ],
+          "race_ticks": 3,
+          "velocity": [
+            10.140357732884175,
+            -4.736245892974718
+          ],
+          "world_tick": 3
+        }
+      ],
+      "policy": "shared flag plus collision: shared preview policy selected once; default preview drive and grip",
+      "wall_x": 8.0
+    }
+  },
+  "metadata": {
+    "confidence": "confirmed project behavior regression vector only; not reference behavior",
+    "model": "current project provisional RaceWorld policy",
+    "schema": 1,
+    "source": "project source revision 500ea0d before provisional model extraction (RaceWorld::step)",
+    "timing": {
+      "configuration": "SimTiming::default()",
+      "configured_physics_hz": 60,
+      "scope": "project vector setup only; not claimed as a reference cadence",
+      "step_seconds": 0.016666666666666666
+    },
+    "tolerance": 1e-12,
+    "units": "project simulation units; physical units unknown"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "quill-coupe",
+  "name": "Quill Coupe",
+  "car": "quill-coupe",
+  "arcade": {
+    "mass_kg": 1180.0,
+    "wheelbase_m": 2.5,
+    "track_width_m": 1.56,
+    "wheel_radius_m": 0.31,
+    "peak_torque_nm": 340.0,
+    "idle_rpm": 900.0,
+    "redline_rpm": 7200.0,
+    "gear_ratios": [
+      3.4,
+      2.2,
+      1.55,
+      1.15,
+      0.9
+    ],
+    "reverse_ratio": 3.2,
+    "final_drive": 3.7,
+    "drivetrain_efficiency": 0.88,
+    "max_brake_force_n": 11000.0,
+    "drag_area_m2": 0.62,
+    "downforce_area_m2": 0.1,
+    "rolling_resistance": 0.012,
+    "tyre_grip": 1.05,
+    "max_steer_angle_rad": 0.55,
+    "steer_falloff_speed_mps": 42.0,
+    "max_speed_mps": 62.0,
+    "front_drive_bias": 0.0,
+    "steer_rate_per_s": 5.0,
+    "steer_return_per_s": 7.0,
+    "lateral_grip_per_s": 7.0
+  },
+  "classic": {
+    "upshift_mps": [
+      27.448702,
+      39.92132,
+      52.30453,
+      62.318386
+    ],
+    "downshift_mps": [
+      22.754705,
+      33.1262,
+      44.525906,
+      53.198624
+    ],
+    "top_speed_mps": 80.0,
+    "accel_scale": 1.0,
+    "coast_scale": 1.0,
+    "brake_scale": 1.0,
+    "shift_seconds": 0.2755,
+    "reverse_speed_mps": 29.4,
+    "steer_gain": 18.3,
+    "grip": 3.3,
+    "low_speed_yaw_rate": 1.7313,
+    "yaw_boost_speed_mps": 68.64
+  },
+  "engine_sound": {
+    "idle_rpm": 900.0,
+    "redline_rpm": 7200.0,
+    "cylinders": 6,
+    "harmonics": [
+      1.0,
+      0.55,
+      0.35,
+      0.2
+    ],
+    "filter_hz_idle": 500.0,
+    "filter_hz_redline": 3400.0,
+    "noise_gain": 0.08,
+    "gain_idle": 0.3,
+    "gain_redline": 0.6
+  }
+}

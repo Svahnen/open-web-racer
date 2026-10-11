@@ -1,0 +1,23 @@
+﻿[graph]
+targets = []
+all-features = true
+
+[advisories]
+version = 2
+yanked = "deny"
+ignore = [
+    { id = "RUSTSEC-2024-0436", reason = "paste is only in the selected wgpu 0.19.4 target-specific Metal backend. This renderer baseline was chosen for the initial compatible build and verified WebGL2 path. This is an accepted maintenance warning, not a vulnerability; re-evaluate before changing the wgpu baseline or adding a macOS build." },
+]
+
+[licenses]
+version = 2
+allow = ["Apache-2.0", "MIT", "BSD-2-Clause", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib", "CC0-1.0"]
+confidence-threshold = 0.93
+
+[bans]
+multiple-versions = "warn"
+wildcards = "deny"
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"

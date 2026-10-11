@@ -1,0 +1,322 @@
+{
+ "schema": "road-pull-targets-v1",
+ "description": "Targets of the downhill pull on a side-sloped road: hands-off yaw rate (rad/s, magnitude, toward the downhill side) versus road side slope, speed and throttle for the default car. Reduced medians of short fit windows.",
+ "slope_definition": "sine of the road roll angle at the car (lateral component of the unit road normal)",
+ "law": {
+  "threshold_slope": 0.285,
+  "pull_gain_per_unit_slope": 0.233,
+  "base_yaw_rad_s_per_unit_slope": 0.05,
+  "gate_speed_mps_at_zero_throttle": 25.2,
+  "gate_speed_mps_at_full_throttle": 20.5,
+  "gate_fade_mps": 0.8
+ },
+ "slope_sweep_default_car": {
+  "8": {
+   "mean_speed_mps": 8.3,
+   "points": [
+    {
+     "slope": 0.0,
+     "yaw_rad_s": 0.0,
+     "n": 13
+    },
+    {
+     "slope": 0.063,
+     "yaw_rad_s": -0.0,
+     "n": 3
+    },
+    {
+     "slope": 0.094,
+     "yaw_rad_s": 0.0015,
+     "n": 3
+    },
+    {
+     "slope": 0.137,
+     "yaw_rad_s": 0.0048,
+     "n": 3
+    },
+    {
+     "slope": 0.182,
+     "yaw_rad_s": 0.0028,
+     "n": 3
+    },
+    {
+     "slope": 0.289,
+     "yaw_rad_s": 0.0533,
+     "n": 3
+    },
+    {
+     "slope": 0.435,
+     "yaw_rad_s": 0.176,
+     "n": 13
+    },
+    {
+     "slope": 0.443,
+     "yaw_rad_s": 0.1775,
+     "n": 15
+    }
+   ]
+  },
+  "11": {
+   "mean_speed_mps": 11.7,
+   "points": [
+    {
+     "slope": 0.0,
+     "yaw_rad_s": 0.0,
+     "n": 12
+    },
+    {
+     "slope": 0.087,
+     "yaw_rad_s": 0.0018,
+     "n": 3
+    },
+    {
+     "slope": 0.267,
+     "yaw_rad_s": 0.0133,
+     "n": 3
+    },
+    {
+     "slope": 0.303,
+     "yaw_rad_s": 0.1147,
+     "n": 3
+    },
+    {
+     "slope": 0.34,
+     "yaw_rad_s": 0.1258,
+     "n": 3
+    },
+    {
+     "slope": 0.394,
+     "yaw_rad_s": 0.1516,
+     "n": 4
+    },
+    {
+     "slope": 0.435,
+     "yaw_rad_s": 0.1748,
+     "n": 14
+    },
+    {
+     "slope": 0.443,
+     "yaw_rad_s": 0.1786,
+     "n": 27
+    }
+   ]
+  },
+  "14": {
+   "mean_speed_mps": 14.6,
+   "points": [
+    {
+     "slope": 0.0,
+     "yaw_rad_s": -0.0,
+     "n": 17
+    },
+    {
+     "slope": 0.043,
+     "yaw_rad_s": 0.0015,
+     "n": 3
+    },
+    {
+     "slope": 0.11,
+     "yaw_rad_s": 0.0044,
+     "n": 4
+    },
+    {
+     "slope": 0.13,
+     "yaw_rad_s": 0.0105,
+     "n": 4
+    },
+    {
+     "slope": 0.215,
+     "yaw_rad_s": 0.0118,
+     "n": 6
+    },
+    {
+     "slope": 0.342,
+     "yaw_rad_s": 0.1318,
+     "n": 3
+    },
+    {
+     "slope": 0.385,
+     "yaw_rad_s": 0.1504,
+     "n": 4
+    },
+    {
+     "slope": 0.435,
+     "yaw_rad_s": 0.1742,
+     "n": 12
+    },
+    {
+     "slope": 0.443,
+     "yaw_rad_s": 0.1782,
+     "n": 24
+    }
+   ]
+  }
+ },
+ "speed_dependence_default_car": {
+  "coast_throttle_off": [
+   {
+    "speed_mps": 5.1,
+    "yaw_per_unit_slope": 0.376,
+    "n": 3
+   },
+   {
+    "speed_mps": 7.0,
+    "yaw_per_unit_slope": 0.394,
+    "n": 8
+   },
+   {
+    "speed_mps": 9.1,
+    "yaw_per_unit_slope": 0.411,
+    "n": 12
+   },
+   {
+    "speed_mps": 10.6,
+    "yaw_per_unit_slope": 0.399,
+    "n": 11
+   },
+   {
+    "speed_mps": 12.8,
+    "yaw_per_unit_slope": 0.403,
+    "n": 9
+   },
+   {
+    "speed_mps": 15.0,
+    "yaw_per_unit_slope": 0.408,
+    "n": 7
+   },
+   {
+    "speed_mps": 16.7,
+    "yaw_per_unit_slope": 0.374,
+    "n": 6
+   },
+   {
+    "speed_mps": 18.3,
+    "yaw_per_unit_slope": 0.358,
+    "n": 6
+   },
+   {
+    "speed_mps": 20.4,
+    "yaw_per_unit_slope": 0.266,
+    "n": 3
+   },
+   {
+    "speed_mps": 23.0,
+    "yaw_per_unit_slope": 0.26,
+    "n": 6
+   },
+   {
+    "speed_mps": 25.1,
+    "yaw_per_unit_slope": 0.149,
+    "n": 3
+   },
+   {
+    "speed_mps": 27.1,
+    "yaw_per_unit_slope": 0.035,
+    "n": 3
+   },
+   {
+    "speed_mps": 28.9,
+    "yaw_per_unit_slope": 0.033,
+    "n": 2
+   },
+   {
+    "speed_mps": 31.1,
+    "yaw_per_unit_slope": 0.048,
+    "n": 2
+   }
+  ],
+  "full_throttle": [
+   {
+    "speed_mps": 19.2,
+    "yaw_per_unit_slope": 0.314,
+    "n": 2
+   },
+   {
+    "speed_mps": 23.0,
+    "yaw_per_unit_slope": 0.024,
+    "n": 3
+   },
+   {
+    "speed_mps": 27.1,
+    "yaw_per_unit_slope": 0.04,
+    "n": 7
+   },
+   {
+    "speed_mps": 29.4,
+    "yaw_per_unit_slope": 0.033,
+    "n": 3
+   },
+   {
+    "speed_mps": 31.2,
+    "yaw_per_unit_slope": 0.025,
+    "n": 4
+   },
+   {
+    "speed_mps": 37.3,
+    "yaw_per_unit_slope": 0.037,
+    "n": 2
+   }
+  ],
+  "cruise_pulsed_throttle": [
+   {
+    "speed_mps": 19.9,
+    "yaw_per_unit_slope": 0.348,
+    "n": 9
+   },
+   {
+    "speed_mps": 20.8,
+    "yaw_per_unit_slope": 0.133,
+    "n": 116
+   },
+   {
+    "speed_mps": 23.7,
+    "yaw_per_unit_slope": 0.056,
+    "n": 78
+   },
+   {
+    "speed_mps": 24.2,
+    "yaw_per_unit_slope": 0.032,
+    "n": 53
+   },
+   {
+    "speed_mps": 26.5,
+    "yaw_per_unit_slope": 0.025,
+    "n": 23
+   },
+   {
+    "speed_mps": 28.3,
+    "yaw_per_unit_slope": 0.038,
+    "n": 4
+   }
+  ]
+ },
+ "cars_low_speed": [
+  {
+   "car_type_index": 0,
+   "w_low_rad_s": 1.7316,
+   "n": 39,
+   "yaw_per_unit_slope": 0.404,
+   "pull_gain": 0.233
+  },
+  {
+   "car_type_index": 7,
+   "w_low_rad_s": 1.9009,
+   "n": 24,
+   "yaw_per_unit_slope": 0.441,
+   "pull_gain": 0.232
+  },
+  {
+   "car_type_index": 2,
+   "w_low_rad_s": 1.7114,
+   "n": 5,
+   "yaw_per_unit_slope": 0.358,
+   "pull_gain": 0.209
+  }
+ ],
+ "opposite_side": {
+  "slope": 0.395,
+  "speed_mps": 12.6,
+  "yaw_per_unit_slope_toward_downhill": 0.387,
+  "n": 39
+ }
+}
